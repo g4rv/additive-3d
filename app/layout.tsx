@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+import { Header } from "@/components/Header";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -17,8 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+    <html lang="en" className="h-full">
+      <body className={`${inter.className} antialiased flex flex-col h-full`}>
+        <Header />
+        <main className="grow">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
