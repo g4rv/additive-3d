@@ -3,263 +3,189 @@ import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "Фарбування пластикових деталей - Послуги - A3D",
-  description: "Професійне фарбування пластикових деталей. Широка палітра кольорів RAL та Pantone. Матові, глянцеві та текстуровані покриття.",
+  title: "Фарбування пластикових деталей - Послуги - Additive3D",
+  description:
+    "Високоякісне фарбування пластикових деталей. Метод пропитки та розпилення, точна відповідність кольору та стійкість покриття.",
 };
 
 export default function PaintingPage() {
   return (
     <div className="min-h-screen bg-dark-bg">
-      <section className="bg-gradient-to-b from-darker-bg to-dark-bg py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <AnimatedSection className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-light mb-6">
-              <span className="text-gold">Фарбування</span> пластикових деталей
+      <section className="relative overflow-hidden bg-linear-to-b from-darker-bg to-dark-bg py-20 md:py-28">
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage:
+              "url(https://source.unsplash.com/1600x900/?spray-paint,industrial,coating)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="absolute inset-0 bg-linear-to-b from-black/80 to-black/40" />
+        </div>
+        <div className="container relative z-10 mx-auto px-4">
+          <AnimatedSection className="mx-auto max-w-4xl text-center">
+            <span className="inline-block text-sm font-semibold uppercase tracking-[0.35em] text-gold">
+              послуги
+            </span>
+            <h1 className="mt-6 text-4xl font-bold uppercase leading-tight text-gray-light md:text-6xl">
+              Фарбування пластикових деталей
             </h1>
-            <p className="text-xl text-gray-medium leading-relaxed">
-              Професійне фарбування 3D друкованих деталей для покращення естетики та захисту поверхні
+            <div className="mx-auto mt-6 h-px w-20 bg-gold" />
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-gray-medium">
+              Наша команда забезпечує індивідуальний підхід та два сучасні методи фарбування, що
+              гарантують однорідне покриття, стійкість до зносу та відповідність корпоративним
+              кольорам.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-12">
+          <div className="mx-auto max-w-5xl space-y-16">
             <AnimatedSection>
-              <div className="prose prose-invert max-w-none">
-                <p className="text-gray-medium text-lg leading-relaxed mb-6">
-                  Фарбування пластикових деталей — це процес нанесення захисного або декоративного покриття на поверхню 
-                  виробів з пластику. Цей метод широко використовується для покращення зовнішнього вигляду, підвищення 
-                  стійкості до зовнішніх факторів та надання деталям бажаного кольору або текстури.
+              <div className="space-y-8">
+                <p className="text-lg leading-relaxed text-gray-medium">
+                  Ми спеціалізуємося на високоякісному фарбуванні деталей, надрукованих на FDM та MJF
+                  обладнанні. Залежно від ваших вимог до зовнішнього вигляду, стійкості та бюджетних
+                  рамок, ми запропонуємо оптимальний метод обробки.
                 </p>
 
-                <h2 className="text-3xl font-bold text-gold mb-6 mt-12">Основні методи фарбування пластику</h2>
-
-                <div className="space-y-8">
-                  <div className="bg-card-bg border border-border rounded-lg p-6">
-                    <h3 className="text-2xl font-semibold text-gold mb-4">1. Фарбування розпиленням (spray painting)</h3>
-                    <p className="text-gray-medium mb-4 leading-relaxed">
-                      Один з найпопулярніших методів, який передбачає нанесення фарби за допомогою пульверизатора або 
-                      аерозольного балончика.
-                    </p>
-                    <h4 className="text-lg font-semibold text-gray-light mb-3">Переваги:</h4>
-                    <ul className="space-y-2 text-gray-medium mb-4">
-                      <li className="flex items-start">
-                        <span className="text-gold mr-3">•</span>
-                        <span>Рівномірне покриття поверхні</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-gold mr-3">•</span>
-                        <span>Можливість створення складних кольорових ефектів</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-gold mr-3">•</span>
-                        <span>Швидкість виконання</span>
-                      </li>
-                    </ul>
-                    <h4 className="text-lg font-semibold text-gray-light mb-3">Застосування:</h4>
-                    <p className="text-gray-medium">
-                      Автомобільна промисловість, виробництво побутової техніки, декоративні вироби.
-                    </p>
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                  <div className="glass-card relative overflow-hidden rounded-2xl border border-white/10 p-8">
+                    <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent" />
+                    <div className="relative space-y-5">
+                      <h2 className="text-2xl font-semibold uppercase tracking-wider text-gold">
+                        Метод пропитки (Dyeing)
+                      </h2>
+                      <p className="text-sm leading-relaxed text-gray-medium">
+                        Глибоке просочення пластика барвником забезпечує рівномірне забарвлення
+                        матеріалу зсередини та максимальну стійкість до стирання.
+                      </p>
+                      <ul className="space-y-2 text-sm text-gray-medium">
+                        <li className="flex items-start gap-3">
+                          <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
+                          <span>Доступний у класичному чорному кольорі</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
+                          <span>Ідеальний для технічних деталей, що піддаються активному використанню</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
+                          <span>Не змивається та не сколюється, зберігаючи колір з часом</span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
 
-                  <div className="bg-card-bg border border-border rounded-lg p-6">
-                    <h3 className="text-2xl font-semibold text-gold mb-4">2. Порошкове фарбування</h3>
-                    <p className="text-gray-medium mb-4 leading-relaxed">
-                      Метод нанесення сухої порошкової фарби на поверхню деталі з подальшим запіканням у печі.
-                    </p>
-                    <h4 className="text-lg font-semibold text-gray-light mb-3">Переваги:</h4>
-                    <ul className="space-y-2 text-gray-medium mb-4">
-                      <li className="flex items-start">
-                        <span className="text-gold mr-3">•</span>
-                        <span>Висока міцність покриття</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-gold mr-3">•</span>
-                        <span>Екологічність (відсутність розчинників)</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-gold mr-3">•</span>
-                        <span>Стійкість до корозії та механічних пошкоджень</span>
-                      </li>
-                    </ul>
-                    <h4 className="text-lg font-semibold text-gray-light mb-3">Застосування:</h4>
-                    <p className="text-gray-medium">
-                      Промислові деталі, меблі, спортивний інвентар.
-                    </p>
-                  </div>
-
-                  <div className="bg-card-bg border border-border rounded-lg p-6">
-                    <h3 className="text-2xl font-semibold text-gold mb-4">3. Занурення у фарбу (dip coating)</h3>
-                    <p className="text-gray-medium mb-4 leading-relaxed">
-                      Деталь занурюється у рідку фарбу, після чого зайва фарба стікає, а покриття висихає.
-                    </p>
-                    <h4 className="text-lg font-semibold text-gray-light mb-3">Переваги:</h4>
-                    <ul className="space-y-2 text-gray-medium mb-4">
-                      <li className="flex items-start">
-                        <span className="text-gold mr-3">•</span>
-                        <span>Простота процесу</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-gold mr-3">•</span>
-                        <span>Рівномірне покриття складних форм</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-gold mr-3">•</span>
-                        <span>Економічність для великих партій</span>
-                      </li>
-                    </ul>
-                    <h4 className="text-lg font-semibold text-gray-light mb-3">Застосування:</h4>
-                    <p className="text-gray-medium">
-                      Дрібні деталі, інструменти, захисні покриття.
-                    </p>
-                  </div>
-
-                  <div className="bg-card-bg border border-border rounded-lg p-6">
-                    <h3 className="text-2xl font-semibold text-gold mb-4">4. Гідрографічне фарбування (hydrographics)</h3>
-                    <p className="text-gray-medium mb-4 leading-relaxed">
-                      Метод перенесення зображення з водорозчинної плівки на поверхню деталі.
-                    </p>
-                    <h4 className="text-lg font-semibold text-gray-light mb-3">Переваги:</h4>
-                    <ul className="space-y-2 text-gray-medium mb-4">
-                      <li className="flex items-start">
-                        <span className="text-gold mr-3">•</span>
-                        <span>Можливість створення складних візерунків (дерево, камінь, карбон)</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-gold mr-3">•</span>
-                        <span>Покриття деталей будь-якої форми</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-gold mr-3">•</span>
-                        <span>Унікальний зовнішній вигляд</span>
-                      </li>
-                    </ul>
-                    <h4 className="text-lg font-semibold text-gray-light mb-3">Застосування:</h4>
-                    <p className="text-gray-medium">
-                      Автомобільний тюнінг, спортивне спорядження, декоративні елементи.
-                    </p>
+                  <div className="glass-card relative overflow-hidden rounded-2xl border border-white/10 p-8">
+                    <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent" />
+                    <div className="relative space-y-5">
+                      <h2 className="text-2xl font-semibold uppercase tracking-wider text-gold">
+                        Метод розпилення (Spray Coating)
+                      </h2>
+                      <p className="text-sm leading-relaxed text-gray-medium">
+                        Нанесення фарби методом розпилення забезпечує бездоганний зовнішній вигляд і
+                        дозволяє підібрати точний відтінок згідно з палітрою RAL.
+                      </p>
+                      <ul className="space-y-2 text-sm text-gray-medium">
+                        <li className="flex items-start gap-3">
+                          <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
+                          <span>Будь-який колір із каталогу RAL</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
+                          <span>Вибір фактури: матова, глянцева чи текстурована поверхня</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
+                          <span>Оптимально для зовнішніх або декоративних елементів, що мають
+                            відповідати брендингу</span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
 
-                <h2 className="text-3xl font-bold text-gold mb-6 mt-12">Типи фарб для пластику</h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-card-bg border border-border rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-gold mb-3">Акрилові фарби</h3>
-                    <p className="text-gray-medium text-sm leading-relaxed">
-                      Швидко сохнуть, мають хорошу адгезію до пластику, доступні у широкій палітрі кольорів.
-                    </p>
-                  </div>
-                  <div className="bg-card-bg border border-border rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-gold mb-3">Поліуретанові фарби</h3>
-                    <p className="text-gray-medium text-sm leading-relaxed">
-                      Високоміцні, стійкі до хімічних речовин та механічних впливів.
-                    </p>
-                  </div>
-                  <div className="bg-card-bg border border-border rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-gold mb-3">Епоксидні фарби</h3>
-                    <p className="text-gray-medium text-sm leading-relaxed">
-                      Забезпечують міцне та довговічне покриття, стійке до води та хімікатів.
-                    </p>
-                  </div>
-                  <div className="bg-card-bg border border-border rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-gold mb-3">Спеціалізовані фарби</h3>
-                    <p className="text-gray-medium text-sm leading-relaxed">
-                      Для конкретних типів пластику (ABS, PC, PA тощо).
-                    </p>
-                  </div>
+                <div className="rounded-2xl border border-white/10 bg-card-bg/60 p-8">
+                  <h3 className="text-xl font-semibold uppercase tracking-wide text-gray-light">
+                    Підхід Additive3D
+                  </h3>
+                  <p className="mt-4 text-sm leading-relaxed text-gray-medium">
+                    Ми пропонуємо повний супровід проєкту: від підготовки поверхні й вибору оптимального
+                    методу фарбування до контролю якості покриття. Кожну деталь тестуємо на адгезію та
+                    відповідність технічним вимогам.
+                  </p>
                 </div>
+              </div>
+            </AnimatedSection>
 
-                <h2 className="text-3xl font-bold text-gold mb-6 mt-12">Етапи фарбування пластикових деталей</h2>
-
-                <div className="space-y-4">
-                  <div className="bg-card-bg border-l-4 border-gold p-6">
-                    <h3 className="text-xl font-semibold text-gray-light mb-2">1. Підготовка поверхні</h3>
-                    <p className="text-gray-medium text-sm">
-                      Очищення від бруду, жиру та пилу. Шліфування для покращення адгезії.
-                    </p>
-                  </div>
-                  <div className="bg-card-bg border-l-4 border-gold p-6">
-                    <h3 className="text-xl font-semibold text-gray-light mb-2">2. Грунтування</h3>
-                    <p className="text-gray-medium text-sm">
-                      Нанесення грунтовки для кращого зчеплення фарби з поверхнею.
-                    </p>
-                  </div>
-                  <div className="bg-card-bg border-l-4 border-gold p-6">
-                    <h3 className="text-xl font-semibold text-gray-light mb-2">3. Нанесення фарби</h3>
-                    <p className="text-gray-medium text-sm">
-                      Рівномірне нанесення фарби обраним методом (розпилення, занурення тощо).
-                    </p>
-                  </div>
-                  <div className="bg-card-bg border-l-4 border-gold p-6">
-                    <h3 className="text-xl font-semibold text-gray-light mb-2">4. Сушіння та затвердіння</h3>
-                    <p className="text-gray-medium text-sm">
-                      Природне висихання або термічна обробка залежно від типу фарби.
-                    </p>
-                  </div>
-                  <div className="bg-card-bg border-l-4 border-gold p-6">
-                    <h3 className="text-xl font-semibold text-gray-light mb-2">5. Фінішна обробка</h3>
-                    <p className="text-gray-medium text-sm">
-                      Полірування, нанесення захисного лаку (за потреби).
-                    </p>
-                  </div>
+            <AnimatedSection delay={0.2}>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div className="rounded-2xl border border-white/10 bg-card-bg/70 p-8">
+                  <h3 className="text-lg font-semibold uppercase tracking-wide text-gold">
+                    Контроль якості покриття
+                  </h3>
+                  <ul className="mt-4 space-y-2 text-sm text-gray-medium">
+                    <li className="flex items-start gap-3">
+                      <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
+                      <span>Перевірка рівномірності та глибини кольору</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
+                      <span>Тестування на стійкість до стирання та подряпин</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
+                      <span>Контроль відповідності корпоративним стандартам бренду</span>
+                    </li>
+                  </ul>
                 </div>
-
-                <h2 className="text-3xl font-bold text-gold mb-6 mt-12">Переваги фарбування пластику</h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="flex items-start">
-                    <span className="text-gold text-2xl mr-3">✓</span>
-                    <div>
-                      <h4 className="text-gray-light font-semibold mb-1">Покращення естетики</h4>
-                      <p className="text-gray-medium text-sm">Надання виробу привабливого зовнішнього вигляду</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-gold text-2xl mr-3">✓</span>
-                    <div>
-                      <h4 className="text-gray-light font-semibold mb-1">Захист від УФ-випромінювання</h4>
-                      <p className="text-gray-medium text-sm">Запобігання вигоранню та руйнуванню</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-gold text-2xl mr-3">✓</span>
-                    <div>
-                      <h4 className="text-gray-light font-semibold mb-1">Підвищення стійкості</h4>
-                      <p className="text-gray-medium text-sm">До вологи, хімікатів та механічних впливів</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-gold text-2xl mr-3">✓</span>
-                    <div>
-                      <h4 className="text-gray-light font-semibold mb-1">Брендинг</h4>
-                      <p className="text-gray-medium text-sm">Можливість нанесення логотипів та корпоративних кольорів</p>
-                    </div>
-                  </div>
+                <div className="rounded-2xl border border-white/10 bg-card-bg/70 p-8">
+                  <h3 className="text-lg font-semibold uppercase tracking-wide text-gold">
+                    Додаткові опції
+                  </h3>
+                  <ul className="mt-4 space-y-2 text-sm text-gray-medium">
+                    <li className="flex items-start gap-3">
+                      <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
+                      <span>Лакове покриття для підвищення глянцю та захисту від подряпин</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
+                      <span>Маскування окремих зон для багатокольорових схем</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
+                      <span>Поверхнева підготовка: шліфування, праймування, герметизація пор</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.3}>
-              <div className="bg-gold/10 border border-gold rounded-lg p-6">
-                <h3 className="text-2xl font-semibold text-gold mb-4">Потрібне фарбування деталей?</h3>
-                <p className="text-gray-medium mb-6">
-                  Зв&apos;яжіться з нами для консультації щодо оптимального методу фарбування для ваших деталей
+              <div className="rounded-2xl border border-gold/40 bg-gold/10 p-8 text-center">
+                <h3 className="text-2xl font-semibold uppercase tracking-wide text-gold">
+                  Готові до співпраці
+                </h3>
+                <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-gray-medium">
+                  Розкажіть нам про проєкт, і ми підготуємо рекомендації щодо оптимального методу
+                  фарбування, підберемо необхідні матеріали та розрахуємо терміни виконання.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
                   <Link
                     href="/contacts"
-                    className="px-6 py-3 bg-gold text-dark-bg font-semibold rounded-lg hover:bg-gold/90 transition-colors text-center"
+                    className="inline-flex items-center justify-center border border-gold px-6 py-3 text-sm font-semibold uppercase tracking-wide text-gold transition-all duration-300 hover:bg-gold hover:text-black"
                   >
                     Зв&apos;язатися з нами
                   </Link>
                   <Link
-                    href="/services"
-                    className="px-6 py-3 border border-gold text-gold font-semibold rounded-lg hover:bg-gold hover:text-dark-bg transition-colors text-center"
+                    href="/calculator"
+                    className="inline-flex items-center justify-center bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-wide text-black transition-transform duration-300 hover:scale-105"
                   >
-                    Всі послуги
+                    Розрахувати проект
                   </Link>
                 </div>
               </div>

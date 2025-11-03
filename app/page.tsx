@@ -7,8 +7,19 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-darker-bg to-dark-bg py-20 md:py-32">
-        <div className="container mx-auto px-4">
+      <section className="relative bg-gradient-to-b from-darker-bg to-dark-bg py-20 md:py-32 overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 z-0 opacity-20"
+          style={{
+            backgroundImage: 'url(https://source.unsplash.com/1600x900/?3dprinting,technology,manufacturing)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-darker-bg/80 to-dark-bg"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-light mb-6 leading-tight">
               Професійний <span className="text-gold">3D друк</span> та{" "}

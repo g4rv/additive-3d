@@ -1,6 +1,16 @@
-# A3D - Професійний 3D друк та сканування
+# Additive3D - Професійний 3D друк та сканування
 
-Сучасний багатосторінковий вебсайт компанії A3D, що спеціалізується на адитивних технологіях. Побудований з використанням Next.js 16, TypeScript та Tailwind CSS з індустріальним дизайном та золотими акцентами.
+Сучасний багатосторінковий вебсайт компанії Additive3D, що спеціалізується на адитивних технологіях. Побудований з використанням Next.js 16, TypeScript та Tailwind CSS з індустріальним дизайном та золотими акцентами.
+
+## 🎉 Version 2.0 - Production Ready
+
+**Latest Updates:**
+- ✅ Immediate page load animations (no scroll triggers)
+- ✅ Multi-level dropdown navigation with hover effects
+- ✅ Hero background images with gradient overlays
+- ✅ Complete rebranding to Additive3D
+- ✅ Enhanced mobile navigation with expandable menus
+- ✅ Backdrop blur glassmorphism effects
 
 ## 🚀 Технології
 
@@ -168,8 +178,25 @@ npm run lint
 
 ## 📄 Ліцензія
 
-© 2025 A3D. Всі права захищені.
+© 2025 Additive3D. Всі права захищені.
 
 ## 👥 Автори
 
-Розроблено для A3D - професійної компанії у сфері адитивних технологій.
+Розроблено для Additive3D - професійної компанії у сфері адитивних технологій.
+
+## 📋 Changelog
+
+### Version 2.0 (2025-11-03)
+- Immediate page load animations (removed scroll triggers)
+- Multi-level dropdown navigation with hover effects
+- Hero section background images
+- Complete rebranding from A3D to Additive3D
+- Enhanced mobile navigation
+- Backdrop blur effects on header
+- Active page highlighting with gold underline
+
+### Version 1.0 (2025-11-03)
+- Initial release with all core pages
+- Dark industrial theme with gold accents
+- Responsive design
+- 30+ pages with Ukrainian content

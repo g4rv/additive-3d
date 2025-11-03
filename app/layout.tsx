@@ -6,14 +6,16 @@ import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "A3D - Професійний 3D друк та сканування",
-  description: "A3D - лідер у сфері адитивних технологій. Професійний 3D друк (FDM, MJF), 3D сканування, реверс-інжиніринг та інспекція геометрії.",
+  title: "Additive3D - Професійний 3D друк та сканування",
+  description: "Професійні послуги 3D друку, сканування та реверс-інжинірингу в Україні. Технології FDM, MJF для прототипування та серійного виробництва.",
   keywords: ["3D друк", "3D сканування", "адитивні технології", "FDM", "MJF", "PA12", "ULTEM", "Stratasys", "HP Jet Fusion"],
   openGraph: {
-    title: "A3D - Професійний 3D друк та сканування",
+    title: "Additive3D - Професійний 3D друк та сканування",
     description: "Професійні послуги 3D друку, сканування та реверс-інжинірингу",
     type: "website",
   },
@@ -26,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk" className="h-full">
-      <body className={`${inter.className} antialiased flex flex-col h-full min-h-screen bg-dark-bg text-gray-light`}>
+      <body className={`${inter.className} antialiased flex flex-col h-full min-h-screen bg-dark-bg text-gray-light overflow-x-hidden`}>
         <Header />
         <main className="grow">{children}</main>
         <Footer />

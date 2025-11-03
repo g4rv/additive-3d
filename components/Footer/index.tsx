@@ -1,15 +1,26 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-darker-bg border-t border-border text-gray-light">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="bg-darker-bg border-t border-border text-gray-medium py-12">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-gold font-semibold text-lg mb-4">A3D</h3>
+            <Link href="/" className="inline-flex items-center mb-4">
+              <Image
+                src="/logo.png"
+                alt="Additive3D"
+                width={140}
+                height={42}
+                className="h-auto w-36"
+                priority
+              />
+              <span className="sr-only">Additive3D</span>
+            </Link>
             <p className="text-gray-medium text-sm mb-4">
               Професійні послуги 3D друку, сканування та реверс-інжинірингу.
               Передові технології для вашого бізнесу.
@@ -60,7 +71,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-border pt-6 text-center text-sm text-gray-medium">
-          <p>&copy; {currentYear} A3D. Всі права захищені.</p>
+          <p>&copy; {currentYear} Additive3D. Всі права захищені.</p>
         </div>
       </div>
     </footer>
