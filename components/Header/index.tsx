@@ -10,16 +10,16 @@ import { useEffect, useState } from "react";
 const navLinks = [
   {
     label: "3D Друк",
-    href: "/3d-printing",
+    href: "/printing",
     dropdown: [
-      { label: "Калькулятор", href: "/calculator" },
-      { label: "MJF", href: "/3d-printing/mjf" },
-      { label: "FDM", href: "/3d-printing/fdm" },
+      { label: "Калькулятор", href: "/printing/calculator" },
+      { label: "MJF", href: "/printing/mjf" },
+      { label: "FDM", href: "/printing/fdm" },
     ],
   },
   {
     label: "3D Сканування",
-    href: "/3d-scanning",
+    href: "/scanning",
   },
   {
     label: "Послуги",
