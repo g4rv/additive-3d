@@ -104,10 +104,12 @@ function DesktopNavItem({
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <button
+      <Link
+        href={item.href}
         className={`hover:text-gold inline-flex items-center gap-1 px-3 py-2 text-sm font-medium transition-all duration-200 ${
           isActive ? "text-gold" : "text-gray-light"
         }`}
+        onClick={() => setIsOpen(false)}
       >
         {item.label}
         <ChevronDown
@@ -118,7 +120,7 @@ function DesktopNavItem({
         {isActive && (
           <span className="bg-gold absolute right-0 bottom-0 left-0 h-0.5"></span>
         )}
-      </button>
+      </Link>
 
       <AnimatePresence>
         {isOpen && (
@@ -167,6 +169,16 @@ export function Header() {
   );
   const [scrolled, setScrolled] = useState(false);
 
+  const mobileItemVariants = {
+    hidden: { opacity: 0, y: -8 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const mobileSubmenuVariants = {
+    collapsed: { height: 0, opacity: 0 },
+    expanded: { height: "auto", opacity: 1 },
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -174,6 +186,15 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : originalOverflow;
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <header
@@ -183,144 +204,201 @@ export function Header() {
           : "border-b border-card-bg bg-[#111]/80 backdrop-blur-sm"
       }`}
     >
-      <nav className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo - Left */}
-          <Link href="/" className="flex items-center gap-3">
-            <Image
-              alt="Additive3D Logo"
-              src="/logo.png"
-              width={140}
-              height={42}
-              className="h-auto"
-            />
-          </Link>
-
-          {/* Navigation - Center */}
-          <nav className="absolute left-1/2 hidden -translate-x-1/2 transform items-center gap-1 lg:flex">
-            {navLinks.map((item) => (
-              <DesktopNavItem
-                key={item.label}
-                item={item}
-                pathname={pathname}
+      <div className="relative">
+        <nav className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            {/* Logo - Left */}
+            <Link href="/" className="flex items-center gap-3">
+              <Image
+                alt="Additive3D Logo"
+                src="/logo.png"
+                width={140}
+                height={42}
+                className="h-auto"
               />
-            ))}
-          </nav>
-
-          {/* Login Button - Right */}
-          <div className="hidden items-center lg:flex">
-            <Link
-              href="/login"
-              className="border-gold text-gold hover:bg-gold inline-flex items-center gap-2 rounded-lg border-2 px-5 py-2.5 font-medium transition-all duration-200 hover:text-[#111]"
-            >
-              <LogIn className="h-4 w-4" />
-              <span>Вхід</span>
             </Link>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="rounded-lg p-2 transition-colors hover:bg-card-bg lg:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <X className="text-gold h-6 w-6" />
-            ) : (
-              <Menu className="text-gray-light h-6 w-6" />
-            )}
-          </button>
-        </div>
-      </nav>
+            {/* Navigation - Center */}
+            <nav className="absolute left-1/2 hidden -translate-x-1/2 transform items-center gap-1 lg:flex">
+              {navLinks.map((item) => (
+                <DesktopNavItem
+                  key={item.label}
+                  item={item}
+                  pathname={pathname}
+                />
+              ))}
+            </nav>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="bg-card-bg border-border max-h-[80vh] overflow-y-auto border-t lg:hidden">
-          <ul className="flex flex-col">
-            {navLinks.map((item) => (
-              <li key={item.label}>
-                <div>
-                  <div className="flex items-center justify-between">
-                    <Link
-                      href={item.href}
-                      className={`hover:bg-darker-bg block flex-1 px-4 py-3 transition-colors ${
-                        pathname === item.href ? "text-gold font-semibold" : ""
-                      }`}
-                      onClick={() => !item.dropdown && setMobileMenuOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                    {item.dropdown && (
-                      <button
-                        onClick={() =>
-                          setMobileDropdownOpen(
-                            mobileDropdownOpen === item.label
-                              ? null
-                              : item.label,
-                          )
-                        }
-                        className="px-4 py-3"
-                      >
-                        <svg
-                          className="h-4 w-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </button>
-                    )}
-                  </div>
-                  {item.dropdown && mobileDropdownOpen === item.label && (
-                    <div className="bg-darker-bg/50">
-                      {item.dropdown.map((dropItem) => (
-                        <div key={dropItem.label}>
-                          <Link
-                            href={dropItem.href}
-                            className="hover:bg-darker-bg block px-8 py-2 text-sm transition-colors"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {dropItem.label}
-                          </Link>
-                          {dropItem.submenu && (
-                            <div className="pl-4">
-                              {dropItem.submenu.map((subItem) => (
-                                <Link
-                                  key={subItem.label}
-                                  href={subItem.href}
-                                  className="hover:bg-darker-bg block px-8 py-2 text-xs transition-colors"
-                                  onClick={() => setMobileMenuOpen(false)}
-                                >
-                                  → {subItem.label}
-                                </Link>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </li>
-            ))}
-            <li>
+            {/* Login Button - Right */}
+            <div className="hidden items-center lg:flex">
               <Link
                 href="/login"
-                className="text-gold hover:bg-darker-bg block px-4 py-3 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
+                className="border-gold text-gold hover:bg-gold inline-flex items-center gap-2 rounded-lg border-2 px-5 py-2.5 font-medium transition-all duration-200 hover:text-[#111]"
               >
-                Вхід
+                <LogIn className="h-4 w-4" />
+                <span>Вхід</span>
               </Link>
-            </li>
-          </ul>
-        </div>
-      )}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="rounded-lg p-2 transition-colors hover:bg-card-bg lg:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <X className="text-gold h-6 w-6" />
+              ) : (
+                <Menu className="text-gray-light h-6 w-6" />
+              )}
+            </button>
+          </div>
+        </nav>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="absolute inset-x-0 top-full z-40 lg:hidden"
+            >
+              <motion.div
+                initial={{ y: -16, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -16, opacity: 0 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                className="max-h-[calc(100vh-96px)] overflow-y-auto rounded-none border border-border bg-[#0f1319] p-3 shadow-2xl"
+              >
+                <motion.ul
+                  initial="hidden"
+                  animate="visible"
+                  variants={{
+                    hidden: {},
+                    visible: {
+                      transition: {
+                        staggerChildren: 0.05,
+                      },
+                    },
+                  }}
+                  className="space-y-2"
+                >
+                  {navLinks.map((item) => {
+                    const isActive =
+                      pathname === item.href || pathname.startsWith(`${item.href}/`);
+                    const isDropdownOpen = mobileDropdownOpen === item.label;
+
+                    return (
+                      <motion.li key={item.label} variants={mobileItemVariants}>
+                        <div className="rounded-xl border border-border/50 bg-[#161b23] shadow-inner">
+                          {item.dropdown ? (
+                            <>
+                              <div className="flex overflow-hidden rounded-xl">
+                                <Link
+                                  href={item.href}
+                                  className={`flex flex-1 items-center px-4 py-3 text-sm font-semibold transition-colors hover:bg-[#1d232b] ${
+                                    isActive ? "text-gold" : "text-gray-light"
+                                  }`}
+                                  onClick={() => {
+                                    setMobileMenuOpen(false);
+                                    setMobileDropdownOpen(null);
+                                  }}
+                                >
+                                  {item.label}
+                                </Link>
+                                <button
+                                  type="button"
+                                  className={`flex items-center justify-center border-l border-border/40 px-3 text-gold transition-colors hover:bg-[#1d232b] ${
+                                    isDropdownOpen ? "bg-[#1d232b]" : ""
+                                  }`}
+                                  onClick={() =>
+                                    setMobileDropdownOpen(
+                                      isDropdownOpen ? null : item.label,
+                                    )
+                                  }
+                                  aria-expanded={isDropdownOpen}
+                                  aria-label={`Toggle submenu for ${item.label}`}
+                                >
+                                  <ChevronDown
+                                    className={`h-5 w-5 transition-transform ${
+                                      isDropdownOpen ? "rotate-180" : ""
+                                    }`}
+                                  />
+                                </button>
+                              </div>
+                              <AnimatePresence initial={false}>
+                                {isDropdownOpen && (
+                                  <motion.div
+                                    key={`${item.label}-submenu`}
+                                    initial="collapsed"
+                                    animate="expanded"
+                                    exit="collapsed"
+                                    variants={mobileSubmenuVariants}
+                                    transition={{ duration: 0.2, ease: "easeOut" }}
+                                    className="space-y-2 border-t border-border/40 px-3 py-3"
+                                  >
+                                    {item.dropdown.map((dropItem) => (
+                                      <div key={dropItem.label} className="space-y-2">
+                                        <Link
+                                          href={dropItem.href}
+                                          className="block rounded-lg px-3 py-2 text-sm text-gray-light transition-colors hover:bg-[#1d232b] hover:text-gold"
+                                          onClick={() => setMobileMenuOpen(false)}
+                                        >
+                                          {dropItem.label}
+                                        </Link>
+                                        {dropItem.submenu && (
+                                          <div className="space-y-1 pl-3">
+                                            {dropItem.submenu.map((subItem) => (
+                                              <Link
+                                                key={subItem.label}
+                                                href={subItem.href}
+                                                className="block rounded-lg px-3 py-2 text-xs text-gray-medium transition-colors hover:bg-[#1d232b] hover:text-gold"
+                                                onClick={() => setMobileMenuOpen(false)}
+                                              >
+                                                → {subItem.label}
+                                              </Link>
+                                            ))}
+                                          </div>
+                                        )}
+                                      </div>
+                                    ))}
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
+                            </>
+                          ) : (
+                            <Link
+                              href={item.href}
+                              className={`block rounded-xl px-4 py-3 text-sm font-semibold transition-colors hover:bg-[#1d232b] ${
+                                pathname === item.href ? "text-gold" : "text-gray-light"
+                              }`}
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {item.label}
+                            </Link>
+                          )}
+                        </div>
+                      </motion.li>
+                    );
+                  })}
+                </motion.ul>
+                <div className="mt-3 border-t border-border/40 pt-3">
+                  <Link
+                    href="/login"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-gold px-4 py-3 text-sm font-semibold text-gold transition-colors hover:bg-gold hover:text-[#111]"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <LogIn className="h-4 w-4" />
+                    Вхід
+                  </Link>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </header>
   );
 }
