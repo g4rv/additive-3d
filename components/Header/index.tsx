@@ -1,11 +1,10 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, LogIn, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 
 const navLinks = [
   {
@@ -71,7 +70,7 @@ interface NavLinkType {
   }>;
 }
 
-function DesktopNavItem({
+const DesktopNavItem = memo(function DesktopNavItem({
   item,
   pathname,
 }: {
@@ -122,44 +121,36 @@ function DesktopNavItem({
         )}
       </Link>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.15, ease: "easeOut" }}
-            className="absolute left-0 mt-2 w-56 overflow-hidden rounded-lg border border-border bg-dark-bg shadow-2xl"
-          >
-            {item.dropdown.map((dropItem) => (
-              <div key={dropItem.label}>
-                <Link
-                  href={dropItem.href}
-                  className="text-gray-light hover:text-gold block px-4 py-3 text-sm transition-colors hover:bg-card-bg"
-                >
-                  {dropItem.label}
-                </Link>
-                {dropItem.submenu && (
-                  <div className="bg-[#111]/50">
-                    {dropItem.submenu.map((subItem) => (
-                      <Link
-                        key={subItem.label}
-                        href={subItem.href}
-                        className="text-gray-medium hover:text-gold block px-6 py-2 text-xs transition-colors hover:bg-card-bg"
-                      >
-                        {subItem.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isOpen && (
+        <div className="absolute left-0 mt-2 w-56 overflow-hidden rounded-lg border border-border bg-dark-bg shadow-2xl animate-in fade-in slide-in-from-top-2 duration-150">
+          {item.dropdown.map((dropItem) => (
+            <div key={dropItem.label}>
+              <Link
+                href={dropItem.href}
+                className="text-gray-light hover:text-gold block px-4 py-3 text-sm transition-colors hover:bg-card-bg"
+              >
+                {dropItem.label}
+              </Link>
+              {dropItem.submenu && (
+                <div className="bg-[#111]/50">
+                  {dropItem.submenu.map((subItem) => (
+                    <Link
+                      key={subItem.label}
+                      href={subItem.href}
+                      className="text-gray-medium hover:text-gold block px-6 py-2 text-xs transition-colors hover:bg-card-bg"
+                    >
+                      {subItem.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
-}
+});
 
 export function Header() {
   const pathname = usePathname();
@@ -169,39 +160,48 @@ export function Header() {
   );
   const [scrolled, setScrolled] = useState(false);
 
-  const mobileItemVariants = {
-    hidden: { opacity: 0, y: -8 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  const mobileSubmenuVariants = {
-    collapsed: { height: 0, opacity: 0 },
-    expanded: { height: "auto", opacity: 1 },
-  };
-
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     if (typeof document === "undefined") return;
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = mobileMenuOpen ? "hidden" : originalOverflow;
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
     return () => {
-      document.body.style.overflow = originalOverflow;
+      document.body.style.overflow = "";
     };
   }, [mobileMenuOpen]);
+
+  const handleMobileMenuClose = useCallback(() => {
+    setMobileMenuOpen(false);
+    setMobileDropdownOpen(null);
+  }, []);
+
+  const toggleMobileDropdown = useCallback((label: string) => {
+    setMobileDropdownOpen((prev) => (prev === label ? null : label));
+  }, []);
 
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-border bg-[#111]/95 shadow-2xl backdrop-blur-md"
-          : "border-b border-card-bg bg-[#111]/80 backdrop-blur-sm"
+          ? "border-b border-border bg-[#111] shadow-2xl"
+          : "border-b border-card-bg bg-[#111]"
       }`}
     >
       <div className="relative">
@@ -256,42 +256,17 @@ export function Header() {
         </nav>
 
         {/* Mobile Menu */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="absolute inset-x-0 top-full z-40 lg:hidden"
-            >
-              <motion.div
-                initial={{ y: -16, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -16, opacity: 0 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-                className="max-h-[calc(100vh-96px)] overflow-y-auto rounded-none border border-border bg-[#0f1319] p-3 shadow-2xl"
-              >
-                <motion.ul
-                  initial="hidden"
-                  animate="visible"
-                  variants={{
-                    hidden: {},
-                    visible: {
-                      transition: {
-                        staggerChildren: 0.05,
-                      },
-                    },
-                  }}
-                  className="space-y-2"
-                >
+        {mobileMenuOpen && (
+          <div className="absolute inset-x-0 top-full z-40 lg:hidden">
+            <div className="max-h-[calc(100vh-96px)] overflow-y-auto rounded-none border border-border bg-[#0f1319] p-3 shadow-2xl">
+                <ul className="space-y-2">
                   {navLinks.map((item) => {
                     const isActive =
                       pathname === item.href || pathname.startsWith(`${item.href}/`);
                     const isDropdownOpen = mobileDropdownOpen === item.label;
 
                     return (
-                      <motion.li key={item.label} variants={mobileItemVariants}>
+                      <li key={item.label}>
                         <div className="rounded-xl border border-border/50 bg-[#161b23] shadow-inner">
                           {item.dropdown ? (
                             <>
@@ -301,10 +276,7 @@ export function Header() {
                                   className={`flex flex-1 items-center px-4 py-3 text-sm font-semibold transition-colors hover:bg-[#1d232b] ${
                                     isActive ? "text-gold" : "text-gray-light"
                                   }`}
-                                  onClick={() => {
-                                    setMobileMenuOpen(false);
-                                    setMobileDropdownOpen(null);
-                                  }}
+                                  onClick={handleMobileMenuClose}
                                 >
                                   {item.label}
                                 </Link>
@@ -313,11 +285,7 @@ export function Header() {
                                   className={`flex items-center justify-center border-l border-border/40 px-3 text-gold transition-colors hover:bg-[#1d232b] ${
                                     isDropdownOpen ? "bg-[#1d232b]" : ""
                                   }`}
-                                  onClick={() =>
-                                    setMobileDropdownOpen(
-                                      isDropdownOpen ? null : item.label,
-                                    )
-                                  }
+                                  onClick={() => toggleMobileDropdown(item.label)}
                                   aria-expanded={isDropdownOpen}
                                   aria-label={`Toggle submenu for ${item.label}`}
                                 >
@@ -328,45 +296,41 @@ export function Header() {
                                   />
                                 </button>
                               </div>
-                              <AnimatePresence initial={false}>
-                                {isDropdownOpen && (
-                                  <motion.div
-                                    key={`${item.label}-submenu`}
-                                    initial="collapsed"
-                                    animate="expanded"
-                                    exit="collapsed"
-                                    variants={mobileSubmenuVariants}
-                                    transition={{ duration: 0.2, ease: "easeOut" }}
-                                    className="space-y-2 border-t border-border/40 px-3 py-3"
-                                  >
-                                    {item.dropdown.map((dropItem) => (
-                                      <div key={dropItem.label} className="space-y-2">
-                                        <Link
-                                          href={dropItem.href}
-                                          className="block rounded-lg px-3 py-2 text-sm text-gray-light transition-colors hover:bg-[#1d232b] hover:text-gold"
-                                          onClick={() => setMobileMenuOpen(false)}
-                                        >
-                                          {dropItem.label}
-                                        </Link>
-                                        {dropItem.submenu && (
-                                          <div className="space-y-1 pl-3">
-                                            {dropItem.submenu.map((subItem) => (
-                                              <Link
-                                                key={subItem.label}
-                                                href={subItem.href}
-                                                className="block rounded-lg px-3 py-2 text-xs text-gray-medium transition-colors hover:bg-[#1d232b] hover:text-gold"
-                                                onClick={() => setMobileMenuOpen(false)}
-                                              >
-                                                → {subItem.label}
-                                              </Link>
-                                            ))}
-                                          </div>
-                                        )}
-                                      </div>
-                                    ))}
-                                  </motion.div>
-                                )}
-                              </AnimatePresence>
+                              <div
+                                className={`overflow-hidden border-t border-border/40 transition-[max-height,opacity] duration-200 ease-out ${
+                                  isDropdownOpen
+                                    ? "max-h-[720px] opacity-100"
+                                    : "max-h-0 opacity-0"
+                                }`}
+                              >
+                                <div className="space-y-2 px-3 py-3">
+                                  {item.dropdown.map((dropItem) => (
+                                    <div key={dropItem.label} className="space-y-2">
+                                      <Link
+                                        href={dropItem.href}
+                                        className="block rounded-lg px-3 py-2 text-sm text-gray-light transition-colors hover:bg-[#1d232b] hover:text-gold"
+                                        onClick={handleMobileMenuClose}
+                                      >
+                                        {dropItem.label}
+                                      </Link>
+                                      {dropItem.submenu && (
+                                        <div className="space-y-1 pl-3">
+                                          {dropItem.submenu.map((subItem) => (
+                                            <Link
+                                              key={subItem.label}
+                                              href={subItem.href}
+                                              className="block rounded-lg px-3 py-2 text-xs text-gray-medium transition-colors hover:bg-[#1d232b] hover:text-gold"
+                                              onClick={handleMobileMenuClose}
+                                            >
+                                              → {subItem.label}
+                                            </Link>
+                                          ))}
+                                        </div>
+                                      )}
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
                             </>
                           ) : (
                             <Link
@@ -380,10 +344,10 @@ export function Header() {
                             </Link>
                           )}
                         </div>
-                      </motion.li>
+                      </li>
                     );
                   })}
-                </motion.ul>
+                </ul>
                 <div className="mt-3 border-t border-border/40 pt-3">
                   <Link
                     href="/login"
@@ -394,10 +358,9 @@ export function Header() {
                     Вхід
                   </Link>
                 </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );
