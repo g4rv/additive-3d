@@ -5,22 +5,24 @@ import ServiceCard from "@/components/ServiceCard";
 
 export const metadata: Metadata = {
   title: "Послуги - A3D",
-  description: "Повний спектр послуг адитивного виробництва: 3D друк, 3D сканування, фарбування, згладжування, 3D моделювання, реверс-інжиніринг та інспекція геометрії.",
+  description:
+    "Повний спектр послуг адитивного виробництва: 3D друк, 3D сканування, фарбування, згладжування, 3D моделювання, реверс-інжиніринг та інспекція геометрії.",
 };
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-dark-bg">
+    <div className="bg-dark-bg min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-darker-bg to-dark-bg py-16 md:py-24">
+      <section className="from-darker-bg to-dark-bg bg-linear-to-b py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <AnimatedSection className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-light mb-6">
+          <AnimatedSection className="mx-auto max-w-3xl text-center">
+            <h1 className="text-gray-light mb-6 text-4xl font-bold md:text-5xl">
               Наші <span className="text-gold">послуги</span>
             </h1>
-            <p className="text-lg text-gray-medium leading-relaxed">
-              Повний цикл послуг адитивного виробництва - від ідеї до готового виробу.
-              Професійне обладнання та досвідчена команда для реалізації ваших проектів.
+            <p className="text-gray-medium text-lg leading-relaxed">
+              Повний цикл послуг адитивного виробництва - від ідеї до готового
+              виробу. Професійне обладнання та досвідчена команда для реалізації
+              ваших проектів.
             </p>
           </AnimatedSection>
         </div>
@@ -29,7 +31,7 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             <AnimatedSection delay={0.1}>
               <ServiceCard
                 title="3D друк"
@@ -97,21 +99,23 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 md:py-24 bg-darker-bg">
+      <section className="bg-darker-bg py-16 md:py-24">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-gold mb-12">
+            <h2 className="text-gold mb-12 text-center text-3xl font-bold md:text-4xl">
               Як ми працюємо
             </h2>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-4">
             <AnimatedSection delay={0.1}>
               <div className="text-center">
-                <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-gold">1</span>
+                <div className="bg-gold/10 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+                  <span className="text-gold text-2xl font-bold">1</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gold mb-2">Консультація</h3>
+                <h3 className="text-gold mb-2 text-lg font-semibold">
+                  Консультація
+                </h3>
                 <p className="text-gray-medium text-sm">
                   Обговорюємо ваш проект та підбираємо оптимальне рішення
                 </p>
@@ -120,10 +124,12 @@ export default function ServicesPage() {
 
             <AnimatedSection delay={0.2}>
               <div className="text-center">
-                <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-gold">2</span>
+                <div className="bg-gold/10 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+                  <span className="text-gold text-2xl font-bold">2</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gold mb-2">Підготовка</h3>
+                <h3 className="text-gold mb-2 text-lg font-semibold">
+                  Підготовка
+                </h3>
                 <p className="text-gray-medium text-sm">
                   Підготовка 3D моделі та розрахунок вартості
                 </p>
@@ -132,10 +138,12 @@ export default function ServicesPage() {
 
             <AnimatedSection delay={0.3}>
               <div className="text-center">
-                <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-gold">3</span>
+                <div className="bg-gold/10 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+                  <span className="text-gold text-2xl font-bold">3</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gold mb-2">Виробництво</h3>
+                <h3 className="text-gold mb-2 text-lg font-semibold">
+                  Виробництво
+                </h3>
                 <p className="text-gray-medium text-sm">
                   Друк або сканування на професійному обладнанні
                 </p>
@@ -144,10 +152,12 @@ export default function ServicesPage() {
 
             <AnimatedSection delay={0.4}>
               <div className="text-center">
-                <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-gold">4</span>
+                <div className="bg-gold/10 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+                  <span className="text-gold text-2xl font-bold">4</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gold mb-2">Постобробка</h3>
+                <h3 className="text-gold mb-2 text-lg font-semibold">
+                  Постобробка
+                </h3>
                 <p className="text-gray-medium text-sm">
                   Фінішна обробка та контроль якості
                 </p>
@@ -160,23 +170,23 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <AnimatedSection className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-light mb-6">
+          <AnimatedSection className="mx-auto max-w-3xl text-center">
+            <h2 className="text-gray-light mb-6 text-3xl font-bold md:text-4xl">
               Маєте проект?
             </h2>
-            <p className="text-lg text-gray-medium mb-8">
+            <p className="text-gray-medium mb-8 text-lg">
               Зв&apos;яжіться з нами для детальної консультації
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
                 href="/contacts"
-                className="px-8 py-4 bg-gold text-dark-bg font-semibold rounded-lg hover:bg-gold/90 transition-colors"
+                className="bg-gold text-dark-bg hover:bg-gold/90 rounded-lg px-8 py-4 font-semibold transition-colors"
               >
                 Контакти
               </Link>
               <Link
                 href="/calculator"
-                className="px-8 py-4 border-2 border-gold text-gold font-semibold rounded-lg hover:bg-gold hover:text-dark-bg transition-colors"
+                className="border-gold text-gold hover:bg-gold hover:text-dark-bg rounded-lg border-2 px-8 py-4 font-semibold transition-colors"
               >
                 Калькулятор
               </Link>

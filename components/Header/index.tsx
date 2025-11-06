@@ -127,13 +127,13 @@ function DesktopNavItem({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
-            className="absolute left-0 mt-2 w-56 overflow-hidden rounded-lg border border-[#3a3a3a] bg-[#1a1a1a] shadow-2xl"
+            className="absolute left-0 mt-2 w-56 overflow-hidden rounded-lg border border-border bg-dark-bg shadow-2xl"
           >
             {item.dropdown.map((dropItem) => (
               <div key={dropItem.label}>
                 <Link
                   href={dropItem.href}
-                  className="text-gray-light hover:text-gold block px-4 py-3 text-sm transition-colors hover:bg-[#2a2a2a]"
+                  className="text-gray-light hover:text-gold block px-4 py-3 text-sm transition-colors hover:bg-card-bg"
                 >
                   {dropItem.label}
                 </Link>
@@ -143,7 +143,7 @@ function DesktopNavItem({
                       <Link
                         key={subItem.label}
                         href={subItem.href}
-                        className="text-gray-medium hover:text-gold block px-6 py-2 text-xs transition-colors hover:bg-[#2a2a2a]"
+                        className="text-gray-medium hover:text-gold block px-6 py-2 text-xs transition-colors hover:bg-card-bg"
                       >
                         {subItem.label}
                       </Link>
@@ -179,8 +179,8 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-[#3a3a3a] bg-[#111]/95 shadow-2xl backdrop-blur-md"
-          : "border-b border-[#2a2a2a] bg-[#111]/80 backdrop-blur-sm"
+          ? "border-b border-border bg-[#111]/95 shadow-2xl backdrop-blur-md"
+          : "border-b border-card-bg bg-[#111]/80 backdrop-blur-sm"
       }`}
     >
       <nav className="container mx-auto px-4 py-4">
@@ -220,7 +220,7 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="rounded-lg p-2 transition-colors hover:bg-[#2a2a2a] lg:hidden"
+            className="rounded-lg p-2 transition-colors hover:bg-card-bg lg:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >

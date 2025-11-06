@@ -5,6 +5,7 @@
 ## 🎉 Version 2.0 - Production Ready
 
 **Latest Updates:**
+
 - ✅ Immediate page load animations (no scroll triggers)
 - ✅ Multi-level dropdown navigation with hover effects
 - ✅ Hero background images with gradient overlays
@@ -61,6 +62,7 @@ components/
 ## 🎨 Дизайн
 
 ### Кольорова палітра
+
 - **Gold Accent**: `#d4af37` - Акцентний колір для кнопок, заголовків
 - **Dark Background**: `#1a1a1a` - Основний фон
 - **Darker Background**: `#0f0f0f` - Темніший фон для контрасту
@@ -70,6 +72,7 @@ components/
 - **Text Medium**: `#9ca3af` - Вторинний текст
 
 ### Особливості дизайну
+
 - Темна індустріальна тема
 - Золоті акценти для важливих елементів
 - Плавні анімації з Framer Motion
@@ -80,6 +83,7 @@ components/
 ## 🌟 Основні функції
 
 ### Головна сторінка
+
 - Hero секція з CTAs
 - Огляд технологій (FDM, MJF, 3D сканування)
 - Популярні матеріали
@@ -87,18 +91,21 @@ components/
 - Call-to-action секції
 
 ### Послуги
+
 - 7 категорій послуг
 - Детальні описи для 3D друку та фарбування
 - Placeholder сторінки для інших послуг
 - Процес роботи (4 етапи)
 
 ### Матеріали
+
 - MJF: PA12 (Nylon 12) з повними характеристиками
 - FDM: ASA, ABS-PC, ULTEM 9085, PC
 - Технічні таблиці з властивостями
 - Застосування та переваги
 
 ### Калькулятор
+
 - Вибір технології (FDM/MJF)
 - Вибір матеріалу
 - Введення об'єму
@@ -106,11 +113,13 @@ components/
 - Миттєвий розрахунок вартості
 
 ### Обладнання
+
 - HP Jet Fusion 5210 (MJF)
 - Stratasys Fortus 250mc (FDM)
 - Stratasys Dimension SST 1200es (FDM)
 
 ### Контакти
+
 - Контактна інформація
 - Форма зворотного зв'язку
 - Години роботи
@@ -118,11 +127,13 @@ components/
 ## 🚀 Запуск проекту
 
 ### Встановлення залежностей
+
 ```bash
 npm install
 ```
 
 ### Запуск dev сервера
+
 ```bash
 npm run dev
 ```
@@ -130,12 +141,14 @@ npm run dev
 Відкрийте [http://localhost:3000](http://localhost:3000) у браузері.
 
 ### Збірка для production
+
 ```bash
 npm run build
 npm start
 ```
 
 ### Лінтинг
+
 ```bash
 npm run lint
 ```
@@ -143,6 +156,7 @@ npm run lint
 ## 📱 Адаптивність
 
 Сайт повністю адаптивний з breakpoints:
+
 - **Mobile**: < 768px
 - **Tablet**: 768px - 1024px
 - **Desktop**: > 1024px
@@ -187,6 +201,7 @@ npm run lint
 ## 📋 Changelog
 
 ### Version 2.0 (2025-11-03)
+
 - Immediate page load animations (removed scroll triggers)
 - Multi-level dropdown navigation with hover effects
 - Hero section background images
@@ -196,6 +211,7 @@ npm run lint
 - Active page highlighting with gold underline
 
 ### Version 1.0 (2025-11-03)
+
 - Initial release with all core pages
 - Dark industrial theme with gold accents
 - Responsive design

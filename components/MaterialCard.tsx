@@ -17,20 +17,20 @@ export default function MaterialCard({
 }: MaterialCardProps) {
   return (
     <Link href={href}>
-      <div className="bg-card-bg border border-border rounded-lg p-6 h-full hover:border-gold transition-all duration-300 hover:shadow-lg hover:shadow-gold/10 group">
+      <div className="bg-card-bg border-border hover:border-gold hover:shadow-gold/10 group h-full rounded-lg border p-6 transition-all duration-300 hover:shadow-lg">
         <div className="mb-4">
-          <span className="inline-block px-3 py-1 bg-gold/10 text-gold text-xs font-semibold rounded-full">
+          <span className="bg-gold/10 text-gold inline-block rounded-full px-3 py-1 text-xs font-semibold">
             {technology}
           </span>
         </div>
-        <h3 className="text-xl font-semibold text-gold mb-3 group-hover:text-gold/80">
+        <h3 className="text-gold group-hover:text-gold/80 mb-3 text-xl font-semibold">
           {name}
         </h3>
-        <p className="text-gray-medium text-sm leading-relaxed mb-4">
+        <p className="text-gray-medium mb-4 text-sm leading-relaxed">
           {description}
         </p>
         {properties.length > 0 && (
-          <ul className="space-y-1 text-xs text-gray-medium">
+          <ul className="text-gray-medium space-y-1 text-xs">
             {properties.map((prop, index) => (
               <li key={index} className="flex items-center">
                 <span className="text-gold mr-2">✓</span>

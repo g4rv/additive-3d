@@ -16,19 +16,19 @@ export default function EquipmentCard({
 }: EquipmentCardProps) {
   return (
     <Link href={href}>
-      <div className="bg-card-bg border border-border rounded-lg p-6 h-full hover:border-gold transition-all duration-300 hover:shadow-lg hover:shadow-gold/10 group">
+      <div className="bg-card-bg border-border hover:border-gold hover:shadow-gold/10 group h-full rounded-lg border p-6 transition-all duration-300 hover:shadow-lg">
         <div className="mb-4">
-          <span className="inline-block px-3 py-1 bg-gold/10 text-gold text-xs font-semibold rounded-full">
+          <span className="bg-gold/10 text-gold inline-block rounded-full px-3 py-1 text-xs font-semibold">
             {technology}
           </span>
         </div>
-        <h3 className="text-xl font-semibold text-gold mb-3 group-hover:text-gold/80">
+        <h3 className="text-gold group-hover:text-gold/80 mb-3 text-xl font-semibold">
           {name}
         </h3>
-        <p className="text-gray-medium text-sm leading-relaxed line-clamp-3">
+        <p className="text-gray-medium line-clamp-3 text-sm leading-relaxed">
           {description}
         </p>
-        <div className="mt-4 text-gold text-sm font-medium group-hover:translate-x-2 transition-transform inline-flex items-center">
+        <div className="text-gold mt-4 inline-flex items-center text-sm font-medium transition-transform group-hover:translate-x-2">
           Детальніше →
         </div>
       </div>

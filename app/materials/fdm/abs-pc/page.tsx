@@ -5,7 +5,8 @@ import MaterialTable from "@/components/MaterialTable";
 
 export const metadata: Metadata = {
   title: "ABS-PC FDM - Матеріали - A3D",
-  description: "ABS-PC для FDM 3D друку - суміш ABS та полікарбонату для підвищеної міцності.",
+  description:
+    "ABS-PC для FDM 3D друку - суміш ABS та полікарбонату для підвищеної міцності.",
 };
 
 const technicalData = [
@@ -19,23 +20,27 @@ const technicalData = [
 
 export default function ABSPCPage() {
   return (
-    <div className="min-h-screen bg-dark-bg">
-      <section className="bg-gradient-to-b from-darker-bg to-dark-bg py-16 md:py-24">
+    <div className="bg-dark-bg min-h-screen">
+      <section className="from-darker-bg to-dark-bg bg-gradient-to-b py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <AnimatedSection className="max-w-4xl mx-auto">
-            <Link href="/materials" className="text-gold hover:text-gold/80 transition-colors mb-4 inline-block">
+          <AnimatedSection className="mx-auto max-w-4xl">
+            <Link
+              href="/materials"
+              className="text-gold hover:text-gold/80 mb-4 inline-block transition-colors"
+            >
               ← Назад до матеріалів
             </Link>
-            <div className="flex items-center gap-3 mb-6">
-              <span className="inline-block px-4 py-2 bg-gold/10 text-gold text-sm font-semibold rounded-full">
+            <div className="mb-6 flex items-center gap-3">
+              <span className="bg-gold/10 text-gold inline-block rounded-full px-4 py-2 text-sm font-semibold">
                 FDM
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-light mb-6">
+            <h1 className="text-gray-light mb-6 text-4xl font-bold md:text-5xl">
               <span className="text-gold">ABS-PC</span>
             </h1>
-            <p className="text-xl text-gray-medium leading-relaxed">
-              Суміш ABS та полікарбонату для підвищеної міцності та термостійкості
+            <p className="text-gray-medium text-xl leading-relaxed">
+              Суміш ABS та полікарбонату для підвищеної міцності та
+              термостійкості
             </p>
           </AnimatedSection>
         </div>
@@ -43,90 +48,121 @@ export default function ABSPCPage() {
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-12">
+          <div className="mx-auto max-w-4xl space-y-12">
             <AnimatedSection>
-              <h2 className="text-3xl font-bold text-gold mb-6">Опис</h2>
-              <p className="text-gray-medium leading-relaxed mb-4">
-                ABS-PC - це композитний матеріал, що поєднує переваги ABS (легкість обробки) та 
-                полікарбонату (висока міцність та термостійкість). Результат - матеріал з чудовим 
-                балансом властивостей для виробництва функціональних деталей.
+              <h2 className="text-gold mb-6 text-3xl font-bold">Опис</h2>
+              <p className="text-gray-medium mb-4 leading-relaxed">
+                ABS-PC - це композитний матеріал, що поєднує переваги ABS
+                (легкість обробки) та полікарбонату (висока міцність та
+                термостійкість). Результат - матеріал з чудовим балансом
+                властивостей для виробництва функціональних деталей.
               </p>
               <p className="text-gray-medium leading-relaxed">
-                Ідеально підходить для деталей, що потребують високої ударної в&apos;язкості та 
-                стійкості до підвищених температур.
+                Ідеально підходить для деталей, що потребують високої ударної
+                в&apos;язкості та стійкості до підвищених температур.
               </p>
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
-              <h2 className="text-3xl font-bold text-gold mb-6">Переваги</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <h2 className="text-gold mb-6 text-3xl font-bold">Переваги</h2>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div className="flex items-start">
-                  <span className="text-gold text-2xl mr-3">✓</span>
+                  <span className="text-gold mr-3 text-2xl">✓</span>
                   <div>
-                    <h4 className="text-gray-light font-semibold mb-1">Висока міцність</h4>
-                    <p className="text-gray-medium text-sm">Краща міцність порівняно з чистим ABS</p>
+                    <h4 className="text-gray-light mb-1 font-semibold">
+                      Висока міцність
+                    </h4>
+                    <p className="text-gray-medium text-sm">
+                      Краща міцність порівняно з чистим ABS
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-gold text-2xl mr-3">✓</span>
+                  <span className="text-gold mr-3 text-2xl">✓</span>
                   <div>
-                    <h4 className="text-gray-light font-semibold mb-1">Термостійкість</h4>
-                    <p className="text-gray-medium text-sm">Робоча температура до 110°C</p>
+                    <h4 className="text-gray-light mb-1 font-semibold">
+                      Термостійкість
+                    </h4>
+                    <p className="text-gray-medium text-sm">
+                      Робоча температура до 110°C
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-gold text-2xl mr-3">✓</span>
+                  <span className="text-gold mr-3 text-2xl">✓</span>
                   <div>
-                    <h4 className="text-gray-light font-semibold mb-1">Ударна в&apos;язкість</h4>
-                    <p className="text-gray-medium text-sm">Висока стійкість до ударних навантажень</p>
+                    <h4 className="text-gray-light mb-1 font-semibold">
+                      Ударна в&apos;язкість
+                    </h4>
+                    <p className="text-gray-medium text-sm">
+                      Висока стійкість до ударних навантажень
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-gold text-2xl mr-3">✓</span>
+                  <span className="text-gold mr-3 text-2xl">✓</span>
                   <div>
-                    <h4 className="text-gray-light font-semibold mb-1">Стабільність розмірів</h4>
-                    <p className="text-gray-medium text-sm">Мінімальна деформація та усадка</p>
+                    <h4 className="text-gray-light mb-1 font-semibold">
+                      Стабільність розмірів
+                    </h4>
+                    <p className="text-gray-medium text-sm">
+                      Мінімальна деформація та усадка
+                    </p>
                   </div>
                 </div>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <h2 className="text-3xl font-bold text-gold mb-6">Технічні характеристики</h2>
+              <h2 className="text-gold mb-6 text-3xl font-bold">
+                Технічні характеристики
+              </h2>
               <MaterialTable data={technicalData} />
             </AnimatedSection>
 
             <AnimatedSection delay={0.3}>
-              <h2 className="text-3xl font-bold text-gold mb-6">Застосування</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-card-bg border border-border rounded-lg p-4">
-                  <p className="text-gray-medium text-sm">Функціональні прототипи</p>
+              <h2 className="text-gold mb-6 text-3xl font-bold">
+                Застосування
+              </h2>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div className="bg-card-bg border-border rounded-lg border p-4">
+                  <p className="text-gray-medium text-sm">
+                    Функціональні прототипи
+                  </p>
                 </div>
-                <div className="bg-card-bg border border-border rounded-lg p-4">
-                  <p className="text-gray-medium text-sm">Виробничі пристосування</p>
+                <div className="bg-card-bg border-border rounded-lg border p-4">
+                  <p className="text-gray-medium text-sm">
+                    Виробничі пристосування
+                  </p>
                 </div>
-                <div className="bg-card-bg border border-border rounded-lg p-4">
-                  <p className="text-gray-medium text-sm">Корпуси електроніки</p>
+                <div className="bg-card-bg border-border rounded-lg border p-4">
+                  <p className="text-gray-medium text-sm">
+                    Корпуси електроніки
+                  </p>
                 </div>
-                <div className="bg-card-bg border border-border rounded-lg p-4">
-                  <p className="text-gray-medium text-sm">Автомобільні компоненти</p>
+                <div className="bg-card-bg border-border rounded-lg border p-4">
+                  <p className="text-gray-medium text-sm">
+                    Автомобільні компоненти
+                  </p>
                 </div>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.4}>
-              <div className="bg-gold/10 border border-gold rounded-lg p-6">
-                <h3 className="text-2xl font-semibold text-gold mb-4">Замовити друк з ABS-PC?</h3>
-                <div className="flex flex-col sm:flex-row gap-4">
+              <div className="bg-gold/10 border-gold rounded-lg border p-6">
+                <h3 className="text-gold mb-4 text-2xl font-semibold">
+                  Замовити друк з ABS-PC?
+                </h3>
+                <div className="flex flex-col gap-4 sm:flex-row">
                   <Link
                     href="/calculator"
-                    className="px-6 py-3 bg-gold text-dark-bg font-semibold rounded-lg hover:bg-gold/90 transition-colors text-center"
+                    className="bg-gold text-dark-bg hover:bg-gold/90 rounded-lg px-6 py-3 text-center font-semibold transition-colors"
                   >
                     Розрахувати вартість
                   </Link>
                   <Link
                     href="/contacts"
-                    className="px-6 py-3 border border-gold text-gold font-semibold rounded-lg hover:bg-gold hover:text-dark-bg transition-colors text-center"
+                    className="border-gold text-gold hover:bg-gold hover:text-dark-bg rounded-lg border px-6 py-3 text-center font-semibold transition-colors"
                   >
                     Зв&apos;язатися
                   </Link>

@@ -1,69 +1,86 @@
-import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
-import ServiceCard from "@/components/ServiceCard";
 import MaterialCard from "@/components/MaterialCard";
+import ServiceCard from "@/components/ServiceCard";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-darker-bg to-dark-bg py-20 md:py-32 overflow-hidden">
+      <section className="from-darker-bg to-dark-bg relative overflow-hidden bg-linear-to-b py-20 md:py-32">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 z-0 opacity-20"
+        <div
+          className="absolute inset-0 z-0 opacity-40 md:opacity-25"
           style={{
-            backgroundImage: 'url(https://source.unsplash.com/1600x900/?3dprinting,technology,manufacturing)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundImage:
+              "url(https://source.unsplash.com/1600x900/?3dprinting,technology,manufacturing)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-darker-bg/80 to-dark-bg"></div>
+          <div className="from-darker-bg/80 to-dark-bg absolute inset-0 bg-linear-to-b"></div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <AnimatedSection className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-light mb-6 leading-tight">
-              Професійний <span className="text-gold">3D друк</span> та{" "}
-              <span className="text-gold">сканування</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-medium mb-8 leading-relaxed">
-              Точність. Інновації. Якість.
-            </p>
-            <p className="text-lg text-gray-medium mb-10 max-w-2xl mx-auto">
-              Передові технології адитивного виробництва для вашого бізнесу.
-              Від прототипування до серійного виробництва.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/calculator"
-                className="px-8 py-4 bg-gold text-dark-bg font-semibold rounded-lg hover:bg-gold/90 transition-colors shadow-lg hover:shadow-gold/30"
-              >
-                Розрахувати 3D друк
-              </Link>
-              <Link
-                href="/services"
-                className="px-8 py-4 border-2 border-gold text-gold font-semibold rounded-lg hover:bg-gold hover:text-dark-bg transition-colors"
-              >
-                Наші послуги
-              </Link>
-            </div>
-          </AnimatedSection>
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="flex flex-col items-center gap-12 md:flex-row md:items-center md:justify-between">
+            <AnimatedSection className="w-full max-w-2xl text-center md:text-left">
+              <h1 className="text-gray-light mb-6 text-4xl leading-tight font-bold md:text-6xl">
+                Професійний <span className="text-gold">3D друк</span> та{" "}
+                <span className="text-gold">сканування</span>
+              </h1>
+              <p className="text-gray-medium mb-8 text-xl leading-relaxed md:text-2xl">
+                Точність. Інновації. Якість.
+              </p>
+              <p className="text-gray-medium mb-10 max-w-2xl md:mx-0 md:text-lg">
+                Передові технології адитивного виробництва для вашого бізнесу. Від
+                прототипування до серійного виробництва.
+              </p>
+              <div className="flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
+                <Link
+                  href="/calculator"
+                  className="bg-gold text-dark-bg hover:bg-gold/90 hover:shadow-gold/30 rounded-lg px-8 py-4 font-semibold shadow-lg transition-colors"
+                >
+                  Розрахувати 3D друк
+                </Link>
+                <Link
+                  href="/services"
+                  className="border-gold text-gold hover:bg-gold hover:text-dark-bg rounded-lg border-2 px-8 py-4 font-semibold transition-colors"
+                >
+                  Наші послуги
+                </Link>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.1} className="w-full max-w-xl">
+              <div className="relative aspect-4/3 overflow-hidden rounded-3xl border border-gold/40 bg-dark-bg/50 shadow-2xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1581092152835-30ab079f19b9?auto=format&fit=crop&w=1600&q=80"
+                  alt="Промисловий 3D-принтер у роботі"
+                  fill
+                  priority
+                  sizes="(min-width: 768px) 480px, 100vw"
+                  className="object-cover"
+                />
+                <div className="from-dark-bg/10 via-dark-bg/20 to-dark-bg/70 absolute inset-0 bg-linear-to-b" />
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 
       {/* Technologies Section */}
-      <section className="py-16 md:py-24 bg-dark-bg">
+      <section className="bg-dark-bg py-16 md:py-24">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-gold mb-4">
+            <h2 className="text-gold mb-4 text-center text-3xl font-bold md:text-4xl">
               Наші технології
             </h2>
-            <p className="text-center text-gray-medium mb-12 max-w-2xl mx-auto">
+            <p className="text-gray-medium mx-auto mb-12 max-w-2xl text-center">
               Використовуємо найсучасніше обладнання для забезпечення найвищої
               якості продукції
             </p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             <AnimatedSection delay={0.1}>
               <ServiceCard
                 title="3D друк FDM"
@@ -93,25 +110,29 @@ export default function Home() {
       </section>
 
       {/* Materials Section */}
-      <section className="py-16 md:py-24 bg-darker-bg">
+      <section className="bg-darker-bg py-16 md:py-24">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-gold mb-4">
+            <h2 className="text-gold mb-4 text-center text-3xl font-bold md:text-4xl">
               Матеріали
             </h2>
-            <p className="text-center text-gray-medium mb-12 max-w-2xl mx-auto">
+            <p className="text-gray-medium mx-auto mb-12 max-w-2xl text-center">
               Широкий вибір високоякісних матеріалів для різних застосувань
             </p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             <AnimatedSection delay={0.1}>
               <MaterialCard
                 name="PA12 (Nylon 12)"
                 technology="MJF"
                 description="Міцний та гнучкий матеріал з чудовими механічними властивостями."
                 href="/materials/mjf/pa12"
-                properties={["Висока міцність", "Хімічна стійкість", "Гнучкість"]}
+                properties={[
+                  "Висока міцність",
+                  "Хімічна стійкість",
+                  "Гнучкість",
+                ]}
               />
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
@@ -143,10 +164,10 @@ export default function Home() {
             </AnimatedSection>
           </div>
 
-          <AnimatedSection delay={0.5} className="text-center mt-10">
+          <AnimatedSection delay={0.5} className="mt-10 text-center">
             <Link
               href="/materials"
-              className="inline-block px-8 py-3 border border-gold text-gold font-semibold rounded-lg hover:bg-gold hover:text-dark-bg transition-colors"
+              className="border-gold text-gold hover:bg-gold hover:text-dark-bg inline-block rounded-lg border px-8 py-3 font-semibold transition-colors"
             >
               Всі матеріали
             </Link>
@@ -155,22 +176,22 @@ export default function Home() {
       </section>
 
       {/* Advantages Section */}
-      <section className="py-16 md:py-24 bg-dark-bg">
+      <section className="bg-dark-bg py-16 md:py-24">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-gold mb-4">
+            <h2 className="text-gold mb-4 text-center text-3xl font-bold md:text-4xl">
               Наші переваги
             </h2>
-            <p className="text-center text-gray-medium mb-12 max-w-2xl mx-auto">
+            <p className="text-gray-medium mx-auto mb-12 max-w-2xl text-center">
               Чому обирають A3D
             </p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <AnimatedSection delay={0.1}>
               <div className="text-center">
-                <div className="text-5xl mb-4">🎯</div>
-                <h3 className="text-xl font-semibold text-gold mb-3">
+                <div className="mb-4 text-5xl">🎯</div>
+                <h3 className="text-gold mb-3 text-xl font-semibold">
                   Висока точність
                 </h3>
                 <p className="text-gray-medium text-sm">
@@ -181,8 +202,8 @@ export default function Home() {
 
             <AnimatedSection delay={0.2}>
               <div className="text-center">
-                <div className="text-5xl mb-4">⚡</div>
-                <h3 className="text-xl font-semibold text-gold mb-3">
+                <div className="mb-4 text-5xl">⚡</div>
+                <h3 className="text-gold mb-3 text-xl font-semibold">
                   Швидкість виконання
                 </h3>
                 <p className="text-gray-medium text-sm">
@@ -193,8 +214,8 @@ export default function Home() {
 
             <AnimatedSection delay={0.3}>
               <div className="text-center">
-                <div className="text-5xl mb-4">🔧</div>
-                <h3 className="text-xl font-semibold text-gold mb-3">
+                <div className="mb-4 text-5xl">🔧</div>
+                <h3 className="text-gold mb-3 text-xl font-semibold">
                   Повний цикл послуг
                 </h3>
                 <p className="text-gray-medium text-sm">
@@ -205,8 +226,8 @@ export default function Home() {
 
             <AnimatedSection delay={0.4}>
               <div className="text-center">
-                <div className="text-5xl mb-4">🏆</div>
-                <h3 className="text-xl font-semibold text-gold mb-3">
+                <div className="mb-4 text-5xl">🏆</div>
+                <h3 className="text-gold mb-3 text-xl font-semibold">
                   Досвідчена команда
                 </h3>
                 <p className="text-gray-medium text-sm">
@@ -217,20 +238,21 @@ export default function Home() {
 
             <AnimatedSection delay={0.5}>
               <div className="text-center">
-                <div className="text-5xl mb-4">🌍</div>
-                <h3 className="text-xl font-semibold text-gold mb-3">
+                <div className="mb-4 text-5xl">🌍</div>
+                <h3 className="text-gold mb-3 text-xl font-semibold">
                   Сертифіковані матеріали
                 </h3>
                 <p className="text-gray-medium text-sm">
-                  Використовуємо тільки перевірені матеріали від провідних виробників
+                  Використовуємо тільки перевірені матеріали від провідних
+                  виробників
                 </p>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.6}>
               <div className="text-center">
-                <div className="text-5xl mb-4">💼</div>
-                <h3 className="text-xl font-semibold text-gold mb-3">
+                <div className="mb-4 text-5xl">💼</div>
+                <h3 className="text-gold mb-3 text-xl font-semibold">
                   Індивідуальний підхід
                 </h3>
                 <p className="text-gray-medium text-sm">
@@ -243,25 +265,26 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-darker-bg to-dark-bg">
+      <section className="from-darker-bg to-dark-bg bg-linear-to-b py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <AnimatedSection className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-light mb-6">
+          <AnimatedSection className="mx-auto max-w-3xl text-center">
+            <h2 className="text-gray-light mb-6 text-3xl font-bold md:text-4xl">
               Готові розпочати проект?
             </h2>
-            <p className="text-lg text-gray-medium mb-8">
-              Зв&apos;яжіться з нами для консультації або розрахунку вартості вашого проекту
+            <p className="text-gray-medium mb-8 text-lg">
+              Зв&apos;яжіться з нами для консультації або розрахунку вартості
+              вашого проекту
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
                 href="/contacts"
-                className="px-8 py-4 bg-gold text-dark-bg font-semibold rounded-lg hover:bg-gold/90 transition-colors shadow-lg"
+                className="bg-gold text-dark-bg hover:bg-gold/90 rounded-lg px-8 py-4 font-semibold shadow-lg transition-colors"
               >
                 Зв&apos;язатися з нами
               </Link>
               <Link
                 href="/calculator"
-                className="px-8 py-4 border-2 border-gold text-gold font-semibold rounded-lg hover:bg-gold hover:text-dark-bg transition-colors"
+                className="border-gold text-gold hover:bg-gold hover:text-dark-bg rounded-lg border-2 px-8 py-4 font-semibold transition-colors"
               >
                 Калькулятор вартості
               </Link>

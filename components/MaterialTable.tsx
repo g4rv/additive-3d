@@ -11,11 +11,11 @@ export default function MaterialTable({ data }: MaterialTableProps) {
     <div className="overflow-x-auto">
       <table className="w-full border-collapse">
         <thead>
-          <tr className="bg-card-bg border-b border-border">
-            <th className="text-left py-3 px-4 text-gold font-semibold">
+          <tr className="bg-card-bg border-border border-b">
+            <th className="text-gold px-4 py-3 text-left font-semibold">
               Властивість
             </th>
-            <th className="text-left py-3 px-4 text-gold font-semibold">
+            <th className="text-gold px-4 py-3 text-left font-semibold">
               Значення
             </th>
           </tr>
@@ -24,12 +24,12 @@ export default function MaterialTable({ data }: MaterialTableProps) {
           {data.map((row, index) => (
             <tr
               key={index}
-              className={`border-b border-border ${
+              className={`border-border border-b ${
                 index % 2 === 0 ? "bg-darker-bg" : "bg-dark-bg"
               } hover:bg-card-bg transition-colors`}
             >
-              <td className="py-3 px-4 text-gray-light">{row.property}</td>
-              <td className="py-3 px-4 text-gray-medium">
+              <td className="text-gray-light px-4 py-3">{row.property}</td>
+              <td className="text-gray-medium px-4 py-3">
                 {row.value}
                 {row.unit && <span className="ml-1 text-sm">{row.unit}</span>}
               </td>

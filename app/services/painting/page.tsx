@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function PaintingPage() {
   return (
-    <div className="min-h-screen bg-dark-bg">
-      <section className="relative overflow-hidden bg-linear-to-b from-darker-bg to-dark-bg py-20 md:py-28">
+    <div className="bg-dark-bg min-h-screen">
+      <section className="from-darker-bg to-dark-bg relative overflow-hidden bg-linear-to-b py-20 md:py-28">
         <div
           className="absolute inset-0 opacity-20"
           style={{
@@ -23,19 +23,19 @@ export default function PaintingPage() {
         >
           <div className="absolute inset-0 bg-linear-to-b from-black/80 to-black/40" />
         </div>
-        <div className="container relative z-10 mx-auto px-4">
+        <div className="relative z-10 container mx-auto px-4">
           <AnimatedSection className="mx-auto max-w-4xl text-center">
-            <span className="inline-block text-sm font-semibold uppercase tracking-[0.35em] text-gold">
+            <span className="text-gold inline-block text-sm font-semibold tracking-[0.35em] uppercase">
               послуги
             </span>
-            <h1 className="mt-6 text-4xl font-bold uppercase leading-tight text-gray-light md:text-6xl">
+            <h1 className="text-gray-light mt-6 text-4xl leading-tight font-bold uppercase md:text-6xl">
               Фарбування пластикових деталей
             </h1>
-            <div className="mx-auto mt-6 h-px w-20 bg-gold" />
-            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-gray-medium">
-              Наша команда забезпечує індивідуальний підхід та два сучасні методи фарбування, що
-              гарантують однорідне покриття, стійкість до зносу та відповідність корпоративним
-              кольорам.
+            <div className="bg-gold mx-auto mt-6 h-px w-20" />
+            <p className="text-gray-medium mx-auto mt-8 max-w-2xl text-lg leading-relaxed">
+              Наша команда забезпечує індивідуальний підхід та два сучасні
+              методи фарбування, що гарантують однорідне покриття, стійкість до
+              зносу та відповідність корпоративним кольорам.
             </p>
           </AnimatedSection>
         </div>
@@ -46,35 +46,43 @@ export default function PaintingPage() {
           <div className="mx-auto max-w-5xl space-y-16">
             <AnimatedSection>
               <div className="space-y-8">
-                <p className="text-lg leading-relaxed text-gray-medium">
-                  Ми спеціалізуємося на високоякісному фарбуванні деталей, надрукованих на FDM та MJF
-                  обладнанні. Залежно від ваших вимог до зовнішнього вигляду, стійкості та бюджетних
-                  рамок, ми запропонуємо оптимальний метод обробки.
+                <p className="text-gray-medium text-lg leading-relaxed">
+                  Ми спеціалізуємося на високоякісному фарбуванні деталей,
+                  надрукованих на FDM та MJF обладнанні. Залежно від ваших вимог
+                  до зовнішнього вигляду, стійкості та бюджетних рамок, ми
+                  запропонуємо оптимальний метод обробки.
                 </p>
 
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                   <div className="glass-card relative overflow-hidden rounded-2xl border border-white/10 p-8">
                     <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent" />
                     <div className="relative space-y-5">
-                      <h2 className="text-2xl font-semibold uppercase tracking-wider text-gold">
+                      <h2 className="text-gold text-2xl font-semibold tracking-wider uppercase">
                         Метод пропитки (Dyeing)
                       </h2>
-                      <p className="text-sm leading-relaxed text-gray-medium">
-                        Глибоке просочення пластика барвником забезпечує рівномірне забарвлення
-                        матеріалу зсередини та максимальну стійкість до стирання.
+                      <p className="text-gray-medium text-sm leading-relaxed">
+                        Глибоке просочення пластика барвником забезпечує
+                        рівномірне забарвлення матеріалу зсередини та
+                        максимальну стійкість до стирання.
                       </p>
-                      <ul className="space-y-2 text-sm text-gray-medium">
+                      <ul className="text-gray-medium space-y-2 text-sm">
                         <li className="flex items-start gap-3">
-                          <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
+                          <span className="bg-gold mt-1.5 block h-1.5 w-1.5 rounded-full" />
                           <span>Доступний у класичному чорному кольорі</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
-                          <span>Ідеальний для технічних деталей, що піддаються активному використанню</span>
+                          <span className="bg-gold mt-1.5 block h-1.5 w-1.5 rounded-full" />
+                          <span>
+                            Ідеальний для технічних деталей, що піддаються
+                            активному використанню
+                          </span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
-                          <span>Не змивається та не сколюється, зберігаючи колір з часом</span>
+                          <span className="bg-gold mt-1.5 block h-1.5 w-1.5 rounded-full" />
+                          <span>
+                            Не змивається та не сколюється, зберігаючи колір з
+                            часом
+                          </span>
                         </li>
                       </ul>
                     </div>
@@ -83,39 +91,46 @@ export default function PaintingPage() {
                   <div className="glass-card relative overflow-hidden rounded-2xl border border-white/10 p-8">
                     <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent" />
                     <div className="relative space-y-5">
-                      <h2 className="text-2xl font-semibold uppercase tracking-wider text-gold">
+                      <h2 className="text-gold text-2xl font-semibold tracking-wider uppercase">
                         Метод розпилення (Spray Coating)
                       </h2>
-                      <p className="text-sm leading-relaxed text-gray-medium">
-                        Нанесення фарби методом розпилення забезпечує бездоганний зовнішній вигляд і
-                        дозволяє підібрати точний відтінок згідно з палітрою RAL.
+                      <p className="text-gray-medium text-sm leading-relaxed">
+                        Нанесення фарби методом розпилення забезпечує
+                        бездоганний зовнішній вигляд і дозволяє підібрати точний
+                        відтінок згідно з палітрою RAL.
                       </p>
-                      <ul className="space-y-2 text-sm text-gray-medium">
+                      <ul className="text-gray-medium space-y-2 text-sm">
                         <li className="flex items-start gap-3">
-                          <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
+                          <span className="bg-gold mt-1.5 block h-1.5 w-1.5 rounded-full" />
                           <span>Будь-який колір із каталогу RAL</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
-                          <span>Вибір фактури: матова, глянцева чи текстурована поверхня</span>
+                          <span className="bg-gold mt-1.5 block h-1.5 w-1.5 rounded-full" />
+                          <span>
+                            Вибір фактури: матова, глянцева чи текстурована
+                            поверхня
+                          </span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
-                          <span>Оптимально для зовнішніх або декоративних елементів, що мають
-                            відповідати брендингу</span>
+                          <span className="bg-gold mt-1.5 block h-1.5 w-1.5 rounded-full" />
+                          <span>
+                            Оптимально для зовнішніх або декоративних елементів,
+                            що мають відповідати брендингу
+                          </span>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
 
-                <div className="rounded-2xl border border-white/10 bg-card-bg/60 p-8">
-                  <h3 className="text-xl font-semibold uppercase tracking-wide text-gray-light">
+                <div className="bg-card-bg/60 rounded-2xl border border-white/10 p-8">
+                  <h3 className="text-gray-light text-xl font-semibold tracking-wide uppercase">
                     Підхід Additive3D
                   </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-gray-medium">
-                    Ми пропонуємо повний супровід проєкту: від підготовки поверхні й вибору оптимального
-                    методу фарбування до контролю якості покриття. Кожну деталь тестуємо на адгезію та
+                  <p className="text-gray-medium mt-4 text-sm leading-relaxed">
+                    Ми пропонуємо повний супровід проєкту: від підготовки
+                    поверхні й вибору оптимального методу фарбування до контролю
+                    якості покриття. Кожну деталь тестуємо на адгезію та
                     відповідність технічним вимогам.
                   </p>
                 </div>
@@ -124,41 +139,53 @@ export default function PaintingPage() {
 
             <AnimatedSection delay={0.2}>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <div className="rounded-2xl border border-white/10 bg-card-bg/70 p-8">
-                  <h3 className="text-lg font-semibold uppercase tracking-wide text-gold">
+                <div className="bg-card-bg/70 rounded-2xl border border-white/10 p-8">
+                  <h3 className="text-gold text-lg font-semibold tracking-wide uppercase">
                     Контроль якості покриття
                   </h3>
-                  <ul className="mt-4 space-y-2 text-sm text-gray-medium">
+                  <ul className="text-gray-medium mt-4 space-y-2 text-sm">
                     <li className="flex items-start gap-3">
-                      <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
+                      <span className="bg-gold mt-1.5 block h-1.5 w-1.5 rounded-full" />
                       <span>Перевірка рівномірності та глибини кольору</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
-                      <span>Тестування на стійкість до стирання та подряпин</span>
+                      <span className="bg-gold mt-1.5 block h-1.5 w-1.5 rounded-full" />
+                      <span>
+                        Тестування на стійкість до стирання та подряпин
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
-                      <span>Контроль відповідності корпоративним стандартам бренду</span>
+                      <span className="bg-gold mt-1.5 block h-1.5 w-1.5 rounded-full" />
+                      <span>
+                        Контроль відповідності корпоративним стандартам бренду
+                      </span>
                     </li>
                   </ul>
                 </div>
-                <div className="rounded-2xl border border-white/10 bg-card-bg/70 p-8">
-                  <h3 className="text-lg font-semibold uppercase tracking-wide text-gold">
+                <div className="bg-card-bg/70 rounded-2xl border border-white/10 p-8">
+                  <h3 className="text-gold text-lg font-semibold tracking-wide uppercase">
                     Додаткові опції
                   </h3>
-                  <ul className="mt-4 space-y-2 text-sm text-gray-medium">
+                  <ul className="text-gray-medium mt-4 space-y-2 text-sm">
                     <li className="flex items-start gap-3">
-                      <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
-                      <span>Лакове покриття для підвищення глянцю та захисту від подряпин</span>
+                      <span className="bg-gold mt-1.5 block h-1.5 w-1.5 rounded-full" />
+                      <span>
+                        Лакове покриття для підвищення глянцю та захисту від
+                        подряпин
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
-                      <span>Маскування окремих зон для багатокольорових схем</span>
+                      <span className="bg-gold mt-1.5 block h-1.5 w-1.5 rounded-full" />
+                      <span>
+                        Маскування окремих зон для багатокольорових схем
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="mt-1.5 block h-1.5 w-1.5 rounded-full bg-gold" />
-                      <span>Поверхнева підготовка: шліфування, праймування, герметизація пор</span>
+                      <span className="bg-gold mt-1.5 block h-1.5 w-1.5 rounded-full" />
+                      <span>
+                        Поверхнева підготовка: шліфування, праймування,
+                        герметизація пор
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -166,24 +193,25 @@ export default function PaintingPage() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.3}>
-              <div className="rounded-2xl border border-gold/40 bg-gold/10 p-8 text-center">
-                <h3 className="text-2xl font-semibold uppercase tracking-wide text-gold">
+              <div className="border-gold/40 bg-gold/10 rounded-2xl border p-8 text-center">
+                <h3 className="text-gold text-2xl font-semibold tracking-wide uppercase">
                   Готові до співпраці
                 </h3>
-                <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-gray-medium">
-                  Розкажіть нам про проєкт, і ми підготуємо рекомендації щодо оптимального методу
-                  фарбування, підберемо необхідні матеріали та розрахуємо терміни виконання.
+                <p className="text-gray-medium mx-auto mt-4 max-w-2xl text-sm leading-relaxed">
+                  Розкажіть нам про проєкт, і ми підготуємо рекомендації щодо
+                  оптимального методу фарбування, підберемо необхідні матеріали
+                  та розрахуємо терміни виконання.
                 </p>
                 <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
                   <Link
                     href="/contacts"
-                    className="inline-flex items-center justify-center border border-gold px-6 py-3 text-sm font-semibold uppercase tracking-wide text-gold transition-all duration-300 hover:bg-gold hover:text-black"
+                    className="border-gold text-gold hover:bg-gold inline-flex items-center justify-center border px-6 py-3 text-sm font-semibold tracking-wide uppercase transition-all duration-300 hover:text-black"
                   >
                     Зв&apos;язатися з нами
                   </Link>
                   <Link
                     href="/calculator"
-                    className="inline-flex items-center justify-center bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-wide text-black transition-transform duration-300 hover:scale-105"
+                    className="bg-gold inline-flex items-center justify-center px-6 py-3 text-sm font-semibold tracking-wide text-black uppercase transition-transform duration-300 hover:scale-105"
                   >
                     Розрахувати проект
                   </Link>

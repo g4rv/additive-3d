@@ -15,14 +15,16 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   return (
     <Link href={href}>
-      <div className="bg-card-bg border border-border rounded-lg p-6 h-full hover:border-gold transition-all duration-300 hover:shadow-lg hover:shadow-gold/10 group">
-        <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
+      <div className="bg-card-bg border-border hover:border-gold hover:shadow-gold/10 group h-full rounded-lg border p-6 transition-all duration-300 hover:shadow-lg">
+        <div className="mb-4 text-4xl transition-transform group-hover:scale-110">
           {icon}
         </div>
-        <h3 className="text-xl font-semibold text-gold mb-3 group-hover:text-gold/80">
+        <h3 className="text-gold group-hover:text-gold/80 mb-3 text-xl font-semibold">
           {title}
         </h3>
-        <p className="text-gray-medium text-sm leading-relaxed">{description}</p>
+        <p className="text-gray-medium text-sm leading-relaxed">
+          {description}
+        </p>
       </div>
     </Link>
   );

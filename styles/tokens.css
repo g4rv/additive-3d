@@ -1,0 +1,21 @@
+:root {
+  --brand-gold: #D4AF37;
+  --brand-gold-700: #B18624;
+  --neutral-900: #0F1720;
+  --neutral-700: #374151;
+  --neutral-600: #6B7280;
+  --neutral-200: #F3F4F6;
+  --warm-bg: #FBF8F1;
+  --white: #FFFFFF;
+  --danger: #E53E3E;
+  --success: #2F855A;
+
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+
+  --radius-lg: 12px;
+}

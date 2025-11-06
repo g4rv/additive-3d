@@ -5,19 +5,20 @@ import MaterialCard from "@/components/MaterialCard";
 
 export const metadata: Metadata = {
   title: "FDM Матеріали - Additive3D",
-  description: "Інженерні термопластики для FDM 3D друку. ASA, PC-ABS, ULTEM 9085, PC.",
+  description:
+    "Інженерні термопластики для FDM 3D друку. ASA, PC-ABS, ULTEM 9085, PC.",
 };
 
 export default function FDMMaterialsPage() {
   return (
-    <div className="min-h-screen bg-dark-bg">
-      <section className="bg-gradient-to-b from-darker-bg to-dark-bg py-20 md:py-28">
+    <div className="bg-dark-bg min-h-screen">
+      <section className="from-darker-bg to-dark-bg bg-gradient-to-b py-20 md:py-28">
         <div className="container mx-auto px-4">
-          <AnimatedSection className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-light mb-6 tracking-tight">
+          <AnimatedSection className="mx-auto max-w-4xl text-center">
+            <h1 className="text-gray-light mb-6 text-4xl font-bold tracking-tight md:text-6xl">
               Матеріали <span className="text-gold">FDM</span>
             </h1>
-            <p className="text-xl text-gray-medium leading-relaxed">
+            <p className="text-gray-medium text-xl leading-relaxed">
               Інженерні термопластики для професійного 3D друку
             </p>
           </AnimatedSection>
@@ -26,9 +27,9 @@ export default function FDMMaterialsPage() {
 
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className="mx-auto max-w-6xl">
             <AnimatedSection delay={0.1}>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              <div className="mb-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
                 <MaterialCard
                   name="ASA"
                   technology="FDM"
@@ -57,42 +58,54 @@ export default function FDMMaterialsPage() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <div className="bg-card-bg border border-border rounded-lg p-8">
-                <h2 className="text-2xl font-bold text-gold mb-6">Як обрати матеріал?</h2>
+              <div className="bg-card-bg border-border rounded-lg border p-8">
+                <h2 className="text-gold mb-6 text-2xl font-bold">
+                  Як обрати матеріал?
+                </h2>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-gold rounded-full mt-2"></div>
+                    <div className="bg-gold mt-2 h-2 w-2 rounded-full"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-light mb-1">ASA</h3>
+                      <h3 className="text-gray-light mb-1 text-lg font-semibold">
+                        ASA
+                      </h3>
                       <p className="text-gray-medium text-sm">
-                        Для зовнішніх застосувань, корпусів, автомобільних деталей
+                        Для зовнішніх застосувань, корпусів, автомобільних
+                        деталей
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-gold rounded-full mt-2"></div>
+                    <div className="bg-gold mt-2 h-2 w-2 rounded-full"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-light mb-1">PC-ABS</h3>
+                      <h3 className="text-gray-light mb-1 text-lg font-semibold">
+                        PC-ABS
+                      </h3>
                       <p className="text-gray-medium text-sm">
                         Для функціональних прототипів, виробничих пристосувань
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-gold rounded-full mt-2"></div>
+                    <div className="bg-gold mt-2 h-2 w-2 rounded-full"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-light mb-1">ULTEM 9085</h3>
+                      <h3 className="text-gray-light mb-1 text-lg font-semibold">
+                        ULTEM 9085
+                      </h3>
                       <p className="text-gray-medium text-sm">
                         Для авіації, космосу, медицини - FST сертифікований
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-gold rounded-full mt-2"></div>
+                    <div className="bg-gold mt-2 h-2 w-2 rounded-full"></div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-light mb-1">PC</h3>
+                      <h3 className="text-gray-light mb-1 text-lg font-semibold">
+                        PC
+                      </h3>
                       <p className="text-gray-medium text-sm">
-                        Для захисних кожухів, оптичних компонентів, ударостійких деталей
+                        Для захисних кожухів, оптичних компонентів, ударостійких
+                        деталей
                       </p>
                     </div>
                   </div>
@@ -101,21 +114,24 @@ export default function FDMMaterialsPage() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.3}>
-              <div className="bg-gold/10 border border-gold rounded-lg p-8 mt-12">
-                <h3 className="text-2xl font-bold text-gold mb-4">Потрібна консультація?</h3>
+              <div className="bg-gold/10 border-gold mt-12 rounded-lg border p-8">
+                <h3 className="text-gold mb-4 text-2xl font-bold">
+                  Потрібна консультація?
+                </h3>
                 <p className="text-gray-medium mb-6">
-                  Наші фахівці допоможуть обрати оптимальний матеріал для вашого проекту
+                  Наші фахівці допоможуть обрати оптимальний матеріал для вашого
+                  проекту
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col gap-4 sm:flex-row">
                   <Link
                     href="/calculator"
-                    className="px-6 py-3 bg-gold text-dark-bg font-semibold rounded-lg hover:bg-gold/90 transition-colors text-center"
+                    className="bg-gold text-dark-bg hover:bg-gold/90 rounded-lg px-6 py-3 text-center font-semibold transition-colors"
                   >
                     Розрахувати вартість
                   </Link>
                   <Link
                     href="/contacts"
-                    className="px-6 py-3 border border-gold text-gold font-semibold rounded-lg hover:bg-gold hover:text-dark-bg transition-colors text-center"
+                    className="border-gold text-gold hover:bg-gold hover:text-dark-bg rounded-lg border px-6 py-3 text-center font-semibold transition-colors"
                   >
                     Зв&apos;язатися
                   </Link>

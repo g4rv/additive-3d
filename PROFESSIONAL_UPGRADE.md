@@ -11,6 +11,7 @@ Complete professional redesign of the Additive3D corporate website with focus on
 ### 1. Header & Navigation Overhaul ✓
 
 #### New Professional Layout
+
 ```
 ┌─────────────────────────────────────────────────────────┐
 │  [Logo]        [Nav Center]              [Login Button] │
@@ -22,6 +23,7 @@ Complete professional redesign of the Additive3D corporate website with focus on
 **Right:** Professional login button with icon
 
 #### Navigation Structure (Ukrainian labels, English paths)
+
 ```
 3D Друк ▼
  ├ Калькулятор (/calculator)
@@ -53,6 +55,7 @@ Complete professional redesign of the Additive3D corporate website with focus on
 ```
 
 #### Features Implemented
+
 - ✅ Hover-triggered dropdowns (desktop)
 - ✅ Tap-to-expand accordions (mobile)
 - ✅ Framer Motion fade + slide transitions (150ms, easeOut)
@@ -64,6 +67,7 @@ Complete professional redesign of the Additive3D corporate website with focus on
 - ✅ Lucide React icons (ChevronDown, Menu, X, LogIn)
 
 #### Technical Details
+
 - **Scroll Effect:** Enhanced blur and shadow after 20px scroll
 - **Animation:** 300ms transition on scroll state change
 - **Backdrop Blur:** `backdrop-blur-md` when scrolled
@@ -77,12 +81,14 @@ Complete professional redesign of the Additive3D corporate website with focus on
 **Installed:** `lucide-react` package
 
 **Icons Used:**
+
 - `ChevronDown` - Dropdown indicators
 - `Menu` - Mobile menu open
 - `X` - Mobile menu close
 - `LogIn` - Login button
 
 **Future Icons to Add:**
+
 - `Calculator` - Calculator links
 - `Lightbulb` - Benefits/features
 - `Wrench` - Equipment sections
@@ -91,6 +97,7 @@ Complete professional redesign of the Additive3D corporate website with focus on
 - `Palette` - Painting services
 
 **Color Scheme:**
+
 - Primary: `text-gold` (#d4af37)
 - Secondary: `text-gray-400`
 - Hover: `text-gold`
@@ -100,11 +107,13 @@ Complete professional redesign of the Additive3D corporate website with focus on
 ### 3. Typography Enhancements ✓
 
 **Font:** Inter (Google Fonts)
+
 - Weights: 400, 500, 600, 700
 - Subsets: Latin, Cyrillic
 - Variable: `--font-inter`
 
 **Hierarchy Guidelines:**
+
 ```css
 /* Headings */
 h1: text-4xl md:text-6xl font-bold tracking-tight
@@ -120,6 +129,7 @@ nav-link: text-sm font-medium
 ```
 
 **Section Titles:**
+
 - Uppercase or small-caps
 - Gold divider line below
 - Increased letter-spacing
@@ -130,22 +140,25 @@ nav-link: text-sm font-medium
 ### 4. Button Styles ✓
 
 #### Primary Button
+
 ```tsx
-className="px-6 py-3 bg-gold text-[#111] font-semibold rounded-lg 
+className="px-6 py-3 bg-gold text-[#111] font-semibold rounded-lg
            hover:bg-[#c49d2f] transition-all duration-200"
 ```
 
 #### Secondary Button (Outlined)
+
 ```tsx
-className="px-5 py-2.5 rounded-lg border-2 border-gold text-gold 
-           font-medium hover:bg-gold hover:text-[#111] 
+className="px-5 py-2.5 rounded-lg border-2 border-gold text-gold
+           font-medium hover:bg-gold hover:text-[#111]
            transition-all duration-200"
 ```
 
 #### Icon Button
+
 ```tsx
-className="inline-flex items-center gap-2 px-5 py-2.5 
-           rounded-lg border-2 border-gold text-gold font-medium 
+className="inline-flex items-center gap-2 px-5 py-2.5
+           rounded-lg border-2 border-gold text-gold font-medium
            hover:bg-gold hover:text-[#111] transition-all duration-200"
 ```
 
@@ -154,6 +167,7 @@ className="inline-flex items-center gap-2 px-5 py-2.5
 ### 5. Animation Standards ✓
 
 **Page Load Animations:**
+
 - Removed: `whileInView` scroll triggers
 - Added: Immediate `animate` on mount
 - Duration: 0.6s
@@ -161,17 +175,20 @@ className="inline-flex items-center gap-2 px-5 py-2.5
 - Motion: Fade-in + upward slide (30px)
 
 **Dropdown Animations:**
+
 - Duration: 150ms
 - Easing: `easeOut`
 - Motion: Fade + slide from top (-8px)
 - Exit: Same animation reversed
 
 **Hover Transitions:**
+
 - Duration: 200ms
 - Properties: `transition-all`
 - Smooth color and background changes
 
 **Section Spacing:**
+
 - Desktop: `py-20 md:py-28`
 - Mobile: `py-16`
 - Consistent throughout
@@ -182,22 +199,10 @@ className="inline-flex items-center gap-2 px-5 py-2.5
 
 ```css
 /* Primary */
---gold: #d4af37
---gold-hover: #c49d2f
-
-/* Backgrounds */
---darker-bg: #111
---dark-bg: #1a1a1a
---card-bg: #2a2a2a
-
-/* Borders */
---border-light: #2a2a2a
---border: #3a3a3a
-
-/* Text */
---text-light: #e5e5e5
---text-medium: #9ca3af
---text-gold: #d4af37
+--gold: #d4af37 --gold-hover: #c49d2f /* Backgrounds */ --darker-bg: #111
+  --dark-bg: #1a1a1a --card-bg: #2a2a2a /* Borders */ --border-light: #2a2a2a
+  --border: #3a3a3a /* Text */ --text-light: #e5e5e5 --text-medium: #9ca3af
+  --text-gold: #d4af37;
 ```
 
 ---
@@ -205,12 +210,14 @@ className="inline-flex items-center gap-2 px-5 py-2.5
 ### 7. Visual Enhancements ✓
 
 #### Hero Section
+
 - Background image from Unsplash
 - URL: `https://source.unsplash.com/1600x900/?3dprinting,industrial,technology`
 - Overlay: Dark gradient for text contrast
 - Opacity: 20% on image, 80% on gradient
 
 #### Image Guidelines
+
 - All images should have dark gradient overlays
 - Text must be readable (contrast ratio > 4.5:1)
 - Use CSS textures for subtle backgrounds
@@ -223,6 +230,7 @@ className="inline-flex items-center gap-2 px-5 py-2.5
 **Company Name:** Additive3D (everywhere)
 
 **Updated Locations:**
+
 - ✅ Header logo alt text
 - ✅ Layout metadata
 - ✅ Open Graph tags
@@ -230,6 +238,7 @@ className="inline-flex items-center gap-2 px-5 py-2.5
 - ✅ Page titles
 
 **Footer Copyright:**
+
 ```tsx
 © Additive3D {currentYear} | Усі права захищено.
 ```
@@ -239,12 +248,14 @@ className="inline-flex items-center gap-2 px-5 py-2.5
 ## 📁 Files Modified
 
 ### Core Components
+
 - `components/Header/index.tsx` - Complete rebuild
 - `app/layout.tsx` - Typography updates
 - `components/AnimatedSection.tsx` - Animation behavior
 - `components/Footer/index.tsx` - Branding
 
 ### Styling
+
 - `app/globals.css` - Color variables
 - All page files - Consistent spacing
 
@@ -253,6 +264,7 @@ className="inline-flex items-center gap-2 px-5 py-2.5
 ## 🎨 Design System
 
 ### Spacing Scale
+
 ```
 xs: 0.5rem (8px)
 sm: 0.75rem (12px)
@@ -264,6 +276,7 @@ xl: 2rem (32px)
 ```
 
 ### Border Radius
+
 ```
 sm: 0.375rem (6px)
 md: 0.5rem (8px)
@@ -272,6 +285,7 @@ xl: 1rem (16px)
 ```
 
 ### Shadow Scale
+
 ```
 sm: 0 1px 2px 0 rgb(0 0 0 / 0.05)
 md: 0 4px 6px -1px rgb(0 0 0 / 0.1)
@@ -285,6 +299,7 @@ xl: 0 20px 25px -5px rgb(0 0 0 / 0.1)
 ## 🚀 Performance
 
 ### Optimizations
+
 - Hardware-accelerated animations
 - Lazy-loaded images
 - Optimized Framer Motion
@@ -292,6 +307,7 @@ xl: 0 20px 25px -5px rgb(0 0 0 / 0.1)
 - Efficient state management
 
 ### Metrics
+
 - Header compile: ~55ms
 - Page render: ~100ms
 - Animation FPS: 60fps
@@ -310,6 +326,7 @@ xl: 1280px  /* Large desktop */
 ```
 
 ### Mobile Behavior
+
 - Hamburger menu < 1024px
 - Stacked navigation
 - Touch-friendly targets (min 44x44px)
@@ -320,6 +337,7 @@ xl: 1280px  /* Large desktop */
 ## ✨ Next Steps (Optional)
 
 ### Phase 2 Enhancements
+
 - [ ] Replace all emojis with Lucide icons
 - [ ] Add hero images to all service pages
 - [ ] Implement page transition animations
@@ -330,6 +348,7 @@ xl: 1280px  /* Large desktop */
 - [ ] Add progress indicators
 
 ### Content
+
 - [ ] Update all page metadata
 - [ ] Add case studies
 - [ ] Create blog section
@@ -367,6 +386,7 @@ xl: 1280px  /* Large desktop */
 ## 📝 Version History
 
 ### v3.0 (2025-11-03) - Professional Upgrade
+
 - Complete header rebuild
 - Icon system integration
 - Typography refinement
@@ -375,12 +395,14 @@ xl: 1280px  /* Large desktop */
 - Design system documentation
 
 ### v2.0 (2025-11-03) - Production Ready
+
 - Immediate animations
 - Dropdown navigation
 - Hero backgrounds
 - Rebranding to Additive3D
 
 ### v1.0 (2025-11-03) - Initial Release
+
 - Core pages
 - Dark theme
 - Ukrainian content

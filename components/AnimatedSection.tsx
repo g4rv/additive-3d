@@ -21,7 +21,7 @@ export default function AnimatedSection({
       transition={{
         duration: 0.8,
         delay,
-        ease: [0.22, 1, 0.36, 1] // Custom easing for smooth entrance
+        ease: [0.22, 1, 0.36, 1], // Custom easing for smooth entrance
       }}
       className={className}
     >
